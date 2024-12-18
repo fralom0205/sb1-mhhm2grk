@@ -1,0 +1,75 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+    
+    function isVerified() {
+      return request.auth.token.email_verified == true;
+    }
+
+    // Content collection
+    match /content/{contentId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated() && isVerified() && validateContentByType() && validateStep();
+      allow update: if isAuthenticated() && isOwner(resource.data.userId) && (
+        validateStepIncrement(resource.data.step, request.resource.data.step) ||
+        request.resource.data.status == 'draft'
+      ) && validateContentByType();
+      allow delete: if isAuthenticated() && isOwner(resource.data.userId);
+
+      function validateContentByType() {
+        let data = request.resource.data;
+        let commonFields = data.keys().hasAll(['title', 'type', 'userId', 'status']) &&
+          data.userId == request.auth.uid &&
+          data.type in ['promotion', 'job', 'event'];
+        let validStep = data.step is number && data.step >= 1 && data.step <= getMaxSteps(data.type);
+        let validStep = data.step is number && data.step >= 1 && data.step <= getMaxSteps(data.type);
+
+        // Validate promotion-specific fields
+        let validPromotion = data.type == 'promotion' ?
+          data.keys().hasAll(['promotionType', 'location', 'validityPeriod']) &&
+          data.validityPeriod.start is string &&
+          data.validityPeriod.end is string &&
+          data.validityPeriod.end > data.validityPeriod.start : true;
+
+        // Validate job-specific fields
+        let validJob = data.type == 'job' ?
+          data.keys().hasAll(['jobType', 'jobLocation', 'requirements', 'applicationDeadline']) &&
+          data.applicationDeadline is string &&
+          data.applicationDeadline > request.time : true;
+
+        // Validate event-specific fields
+        let validEvent = data.type == 'event' ?
+          data.keys().hasAll(['eventType', 'eventLocation', 'eventDate', 'venue']) &&
+          data.eventDate is string &&
+          data.eventDate > request.time : true;
+
+        return commonFields && validStep && validPromotion && validJob && validEvent;
+      }
+
+      function getMaxSteps(type) {
+        return type in ['promotion', 'job'] ? 5 : type == 'event' ? 3 : 0;
+      }
+
+      function validateStepIncrement(currentStep, newStep) {
+        return newStep is number && currentStep is number && newStep >= currentStep;
+      }
+
+      function getMaxSteps(type) {
+        return type in ['promotion', 'job'] ? 5 : type == 'event' ? 3 : 0;
+      }
+
+      function validateStep() {
+        let data = request.resource.data;
+        return data.step <= getMaxSteps(data.type);
+      }
+    }
+  }
+}

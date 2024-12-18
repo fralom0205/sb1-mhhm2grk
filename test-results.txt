@@ -1,0 +1,2206 @@
+FAIL src/services/__tests__/content/queries.test.ts
+  Content Queries
+    ✓ should build basic query with required constraints (9 ms)
+    ✓ should add type filter when specified (6 ms)
+    ✓ should add status filter when specified (8 ms)
+    ✓ should handle pagination options
+    ✓ should combine all filters and pagination (1 ms)
+    ✕ should handle date range filters (2 ms)
+    ✓ should handle invalid pagination values (2 ms)
+
+  ● Content Queries › should handle date range filters
+
+    Expected value   undefined
+    Received:
+      undefined
+
+    Message:
+      expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: "createdAt", ">=", "2024-01-01"
+    Received: "userId", "==", "test-user-123"
+
+    Number of calls: 1
+
+    Difference:
+
+    Compared values have no visual difference.Error:
+
+      83 |     const constraints = buildContentQuery(mockUserId, filters);
+      84 |
+    > 85 |     expect(where).toHaveBeenCalledWith('createdAt', '>=', '2024-01-01');
+         |                   ^
+      86 |     expect(where).toHaveBeenCalledWith('createdAt', '<=', '2024-12-31');
+      87 |     expect(constraints).toHaveLength(5);
+      88 |   });
+
+      at Object.eval (src/services/__tests__/content/queries.test.ts:85:19)
+      at https:/zp1v56uxy8rdx5ypatb0ockcb9tr6a-oci3.w-credentialless-staticblitz.com/blitz.c8c182a3.js:40:21812
+      at new Promise (https:/zp1v56uxy8rdx5ypatb0ockcb9tr6a-oci3.w-credentialless-staticblitz.com/blitz.c8c182a3.js:40:21783)
+
+FAIL src/features/content/components/NewContent/steps/__tests__/JobStep4.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep4.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep4.test.tsx[0m:[93m110[0m:[93m11[0m - [91merror[0m[90m TS2561: [0mObject literal may only specify known properties, but 'coverImage' does not exist in type 'Partial<JobContent>'. Did you mean to write 'coverImageUrl'?
+
+    [7m110[0m           coverImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40'
+    [7m   [0m [91m          ~~~~~~~~~~[0m
+
+      [96msrc/features/content/components/NewContent/steps/JobStep4.tsx[0m:[93m31[0m:[93m3[0m
+        [7m31[0m   data: Partial<JobContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & JobStep4Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep4.test.tsx[0m:[93m125[0m:[93m11[0m - [91merror[0m[90m TS2561: [0mObject literal may only specify known properties, but 'coverImage' does not exist in type 'Partial<JobContent>'. Did you mean to write 'coverImageUrl'?
+
+    [7m125[0m           coverImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40'
+    [7m   [0m [91m          ~~~~~~~~~~[0m
+
+      [96msrc/features/content/components/NewContent/steps/JobStep4.tsx[0m:[93m31[0m:[93m3[0m
+        [7m31[0m   data: Partial<JobContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & JobStep4Props'
+
+PASS src/features/content/hooks/__tests__/useContentState.test.ts
+  useContentState
+    ✓ should initialize with default state (28 ms)
+    ✓ should initialize with custom state (9 ms)
+    ✓ should update step (5 ms)
+    ✓ should update data and mark as dirty (4 ms)
+    ✓ should set error (3 ms)
+    ✓ should set submitting state (5 ms)
+    ✓ should reset dirty state (4 ms)
+
+FAIL src/features/content/components/NewContent/steps/__tests__/JobSteps.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobSteps.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobSteps.test.tsx[0m:[93m4[0m:[93m30[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../../../utils/contentValidation' or its corresponding type declarations.
+
+    [7m4[0m import { validateStep } from '../../../../../utils/contentValidation';
+    [7m [0m [91m                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobSteps.test.tsx[0m:[93m34[0m:[93m13[0m - [91merror[0m[90m TS2740: [0mType '{ step: number; formData: {}; onStepChange: Mock<any, any, any>; onSubmit: Mock<any, any, any>; }' is missing the following properties from type 'JobStepsProps': onNext, onBack, onCancel, onSaveDraft, and 3 more.
+
+    [7m34[0m     render(<JobSteps {...props} />);
+    [7m  [0m [91m            ~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobSteps.test.tsx[0m:[93m44[0m:[93m35[0m - [91merror[0m[90m TS2740: [0mType '{ step: number; formData: {}; onStepChange: Mock<any, any, any>; onSubmit: Mock<any, any, any>; }' is missing the following properties from type 'JobStepsProps': onNext, onBack, onCancel, onSaveDraft, and 3 more.
+
+    [7m44[0m     const { container } = render(<JobSteps {...props} />);
+    [7m  [0m [91m                                  ~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobSteps.test.tsx[0m:[93m60[0m:[93m13[0m - [91merror[0m[90m TS2740: [0mType '{ step: number; formData: {}; onStepChange: Mock<any, any, any>; onSubmit: Mock<any, any, any>; }' is missing the following properties from type 'JobStepsProps': onNext, onBack, onCancel, onSaveDraft, and 3 more.
+
+    [7m60[0m     render(<JobSteps {...props} />);
+    [7m  [0m [91m            ~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobSteps.test.tsx[0m:[93m71[0m:[93m13[0m - [91merror[0m[90m TS2740: [0mType '{ step: number; formData: { title: string; }; onStepChange: Mock<any, any, any>; onSubmit: Mock<any, any, any>; }' is missing the following properties from type 'JobStepsProps': onNext, onBack, onCancel, onSaveDraft, and 3 more.
+
+    [7m71[0m     render(<JobSteps {...props} />);
+    [7m  [0m [91m            ~~~~~~~~[0m
+
+PASS src/features/content/hooks/__tests__/useEventForm.test.ts
+  useEventForm
+    ✓ should initialize with empty form data (24 ms)
+    ✓ should update fields correctly (4 ms)
+    ✓ should validate required fields (6 ms)
+    ✓ should clear errors when field is updated (4 ms)
+    ✓ should validate form successfully with valid data (3 ms)
+
+FAIL src/features/content/components/NewContent/steps/__tests__/EventStep5.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep5.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep5.test.tsx[0m:[93m3[0m:[93m25[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../types/content' or its corresponding type declarations.
+
+    [7m3[0m import { Content } from '../../../types/content';
+    [7m [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/steps/__tests__/PromotionStep1.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/PromotionStep1.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/PromotionStep1.test.tsx[0m:[93m21[0m:[93m9[0m - [91merror[0m[90m TS6133: [0m'mockOnSaveDraft' is declared but its value is never read.
+
+    [7m21[0m   const mockOnSaveDraft = jest.fn();
+    [7m  [0m [91m        ~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/PromotionStep1.test.tsx[0m:[93m31[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; promotionType: string; location: string; validityPeriod: { start: string; end: string; }; }' is not assignable to type 'Partial<PromotionContent>'.
+      Types of property 'promotionType' are incompatible.
+        Type 'string' is not assignable to type '"discount" | "offer" | "event" | undefined'.
+
+    [7m31[0m         data={mockData}
+    [7m  [0m [91m        ~~~~[0m
+
+      [96msrc/features/content/components/NewContent/steps/PromotionStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<PromotionContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & PromotionStep1Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/PromotionStep1.test.tsx[0m:[93m47[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; promotionType: string; location: string; validityPeriod: { start: string; end: string; }; }' is not assignable to type 'Partial<PromotionContent>'.
+      Types of property 'promotionType' are incompatible.
+        Type 'string' is not assignable to type '"discount" | "offer" | "event" | undefined'.
+
+    [7m47[0m         data={mockData}
+    [7m  [0m [91m        ~~~~[0m
+
+      [96msrc/features/content/components/NewContent/steps/PromotionStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<PromotionContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & PromotionStep1Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/PromotionStep1.test.tsx[0m:[93m69[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; promotionType: string; location: string; validityPeriod: { start: string; end: string; }; }' is not assignable to type 'Partial<PromotionContent>'.
+      Types of property 'promotionType' are incompatible.
+        Type 'string' is not assignable to type '"discount" | "offer" | "event" | undefined'.
+
+    [7m69[0m         data={mockData}
+    [7m  [0m [91m        ~~~~[0m
+
+      [96msrc/features/content/components/NewContent/steps/PromotionStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<PromotionContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & PromotionStep1Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/PromotionStep1.test.tsx[0m:[93m106[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; promotionType: string; location: string; validityPeriod: { start: string; end: string; }; }' is not assignable to type 'Partial<PromotionContent>'.
+      Types of property 'promotionType' are incompatible.
+        Type 'string' is not assignable to type '"discount" | "offer" | "event" | undefined'.
+
+    [7m106[0m         data={mockData}
+    [7m   [0m [91m        ~~~~[0m
+
+      [96msrc/features/content/components/NewContent/steps/PromotionStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<PromotionContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & PromotionStep1Props'
+
+FAIL src/features/content/components/NewContent/steps/__tests__/JobStep3.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep3.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep3.test.tsx[0m:[93m3[0m:[93m25[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../types/content' or its corresponding type declarations.
+
+    [7m3[0m import { Content } from '../../../types/content';
+    [7m [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/steps/__tests__/EventStep3.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep3.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep3.test.tsx[0m:[93m4[0m:[93m30[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../../../utils/contentValidation' or its corresponding type declarations.
+
+    [7m4[0m import { validateStep } from '../../../../../utils/contentValidation';
+    [7m [0m [91m                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/steps/__tests__/ContentStep5.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/ContentStep5.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/ContentStep5.test.tsx[0m:[93m3[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"../ContentStep5"' has no exported member 'ContentStep5'.
+
+    [7m3[0m import { ContentStep5 } from '../ContentStep5';
+    [7m [0m [91m         ~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/ContentStep5.test.tsx[0m:[93m4[0m:[93m33[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../../../utils/contentValidation' or its corresponding type declarations.
+
+    [7m4[0m import { validateContent } from '../../../../../utils/contentValidation';
+    [7m [0m [91m                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/ContentStep5.test.tsx[0m:[93m9[0m:[93m9[0m - [91merror[0m[90m TS6133: [0m'mockData' is declared but its value is never read.
+
+    [7m9[0m   const mockData = {
+    [7m [0m [91m        ~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/ContentStep5.test.tsx[0m:[93m28[0m:[93m22[0m - [91merror[0m[90m TS2339: [0mProperty 'onPublish' does not exist on type '{}'.
+
+    [7m28[0m     expect(mockProps.onPublish).toHaveBeenCalled();
+    [7m  [0m [91m                     ~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/ContentStep5.test.tsx[0m:[93m41[0m:[93m22[0m - [91merror[0m[90m TS2339: [0mProperty 'onPublish' does not exist on type '{}'.
+
+    [7m41[0m     expect(mockProps.onPublish).not.toHaveBeenCalled();
+    [7m  [0m [91m                     ~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/steps/__tests__/EventStep1.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep1.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx[0m:[93m24[0m:[93m9[0m - [91merror[0m[90m TS6133: [0m'mockOnSaveDraft' is declared but its value is never read.
+
+    [7m24[0m   const mockOnSaveDraft = jest.fn();
+    [7m  [0m [91m        ~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx[0m:[93m34[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; jobType: string; jobLocation: string; department: string; salary: { min: undefined; max: undefined; period: string; }; applicationDeadline: string; }' is not assignable to type 'Partial<JobContent>'.
+      Types of property 'salary' are incompatible.
+        Property 'currency' is missing in type '{ min: undefined; max: undefined; period: string; }' but required in type '{ min?: number | undefined; max?: number | undefined; currency: string; period: "year" | "hour" | "month"; }'.
+
+    [7m34[0m         data={mockData}
+    [7m  [0m [91m        ~~~~[0m
+
+      [96msrc/types/content.ts[0m:[93m41[0m:[93m5[0m
+        [7m41[0m     currency: string;
+        [7m  [0m [96m    ~~~~~~~~[0m
+        'currency' is declared here.
+      [96msrc/features/content/components/NewContent/steps/JobStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<JobContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & JobStep1Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx[0m:[93m50[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; jobType: string; jobLocation: string; department: string; salary: { min: undefined; max: undefined; period: string; }; applicationDeadline: string; }' is not assignable to type 'Partial<JobContent>'.
+      Types of property 'salary' are incompatible.
+        Property 'currency' is missing in type '{ min: undefined; max: undefined; period: string; }' but required in type '{ min?: number | undefined; max?: number | undefined; currency: string; period: "year" | "hour" | "month"; }'.
+
+    [7m50[0m         data={mockData}
+    [7m  [0m [91m        ~~~~[0m
+
+      [96msrc/types/content.ts[0m:[93m41[0m:[93m5[0m
+        [7m41[0m     currency: string;
+        [7m  [0m [96m    ~~~~~~~~[0m
+        'currency' is declared here.
+      [96msrc/features/content/components/NewContent/steps/JobStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<JobContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & JobStep1Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx[0m:[93m71[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; jobType: string; jobLocation: string; department: string; salary: { min: undefined; max: undefined; period: string; }; applicationDeadline: string; }' is not assignable to type 'Partial<JobContent>'.
+      Types of property 'salary' are incompatible.
+        Property 'currency' is missing in type '{ min: undefined; max: undefined; period: string; }' but required in type '{ min?: number | undefined; max?: number | undefined; currency: string; period: "year" | "hour" | "month"; }'.
+
+    [7m71[0m         data={mockData}
+    [7m  [0m [91m        ~~~~[0m
+
+      [96msrc/types/content.ts[0m:[93m41[0m:[93m5[0m
+        [7m41[0m     currency: string;
+        [7m  [0m [96m    ~~~~~~~~[0m
+        'currency' is declared here.
+      [96msrc/features/content/components/NewContent/steps/JobStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<JobContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & JobStep1Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx[0m:[93m107[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; jobType: string; jobLocation: string; department: string; salary: { min: undefined; max: undefined; period: string; }; applicationDeadline: string; }' is not assignable to type 'Partial<JobContent>'.
+      Types of property 'salary' are incompatible.
+        Property 'currency' is missing in type '{ min: undefined; max: undefined; period: string; }' but required in type '{ min?: number | undefined; max?: number | undefined; currency: string; period: "year" | "hour" | "month"; }'.
+
+    [7m107[0m         data={mockData}
+    [7m   [0m [91m        ~~~~[0m
+
+      [96msrc/types/content.ts[0m:[93m41[0m:[93m5[0m
+        [7m41[0m     currency: string;
+        [7m  [0m [96m    ~~~~~~~~[0m
+        'currency' is declared here.
+      [96msrc/features/content/components/NewContent/steps/JobStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<JobContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & JobStep1Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx[0m:[93m146[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; jobType: string; jobLocation: string; department: string; salary: { min: undefined; max: undefined; period: string; }; applicationDeadline: string; }' is not assignable to type 'Partial<JobContent>'.
+      Types of property 'salary' are incompatible.
+        Property 'currency' is missing in type '{ min: undefined; max: undefined; period: string; }' but required in type '{ min?: number | undefined; max?: number | undefined; currency: string; period: "year" | "hour" | "month"; }'.
+
+    [7m146[0m         data={mockData}
+    [7m   [0m [91m        ~~~~[0m
+
+      [96msrc/types/content.ts[0m:[93m41[0m:[93m5[0m
+        [7m41[0m     currency: string;
+        [7m  [0m [96m    ~~~~~~~~[0m
+        'currency' is declared here.
+      [96msrc/features/content/components/NewContent/steps/JobStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<JobContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & JobStep1Props'
+
+FAIL src/features/content/components/NewContent/__tests__/NewContentHeader.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/__tests__/NewContentHeader.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/__tests__/NewContentType.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/__tests__/NewContentType.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/__tests__/NewContentType.test.tsx[0m:[93m4[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"../../../types"' has no exported member 'ContentType'.
+
+    [7m4[0m import { ContentType } from '../../../types';
+    [7m [0m [91m         ~~~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/steps/__tests__/EventStep4.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep4.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep4.test.tsx[0m:[93m3[0m:[93m25[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../types/content' or its corresponding type declarations.
+
+    [7m3[0m import { Content } from '../../../types/content';
+    [7m [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/utils/__tests__/contentFormatters.test.ts
+  ● Test suite failed to run
+
+    [96msrc/features/content/utils/__tests__/contentFormatters.test.ts[0m:[93m2[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'Content' is declared but its value is never read.
+
+    [7m2[0m import { Content } from '../../../../types/content';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/utils/__tests__/contentFormatters.test.ts[0m:[93m17[0m:[93m41[0m - [91merror[0m[90m TS2559: [0mType '{ jobType: string; jobLocation: string; }' has no properties in common with type 'Partial<Content>'.
+
+    [7m17[0m       const label = getTypeLabel('job', jobData);
+    [7m  [0m [91m                                        ~~~~~~~[0m
+    [96msrc/features/content/utils/__tests__/contentFormatters.test.ts[0m:[93m28[0m:[93m43[0m - [91merror[0m[90m TS2559: [0mType '{ eventType: string; eventLocation: string; }' has no properties in common with type 'Partial<Content>'.
+
+    [7m28[0m       const label = getTypeLabel('event', eventData);
+    [7m  [0m [91m                                          ~~~~~~~~~[0m
+    [96msrc/features/content/utils/__tests__/contentFormatters.test.ts[0m:[93m39[0m:[93m47[0m - [91merror[0m[90m TS2559: [0mType '{ promotionType: string; location: string; }' has no properties in common with type 'Partial<Content>'.
+
+    [7m39[0m       const label = getTypeLabel('promotion', promotionData);
+    [7m  [0m [91m                                              ~~~~~~~~~~~~~[0m
+    [96msrc/features/content/utils/__tests__/contentFormatters.test.ts[0m:[93m57[0m:[93m43[0m - [91merror[0m[90m TS2559: [0mType '{ applicationDeadline: string; }' has no properties in common with type 'Partial<Content>'.
+
+    [7m57[0m       const dateInfo = getDateInfo('job', jobData);
+    [7m  [0m [91m                                          ~~~~~~~[0m
+    [96msrc/features/content/utils/__tests__/contentFormatters.test.ts[0m:[93m67[0m:[93m45[0m - [91merror[0m[90m TS2559: [0mType '{ eventDate: string; }' has no properties in common with type 'Partial<Content>'.
+
+    [7m67[0m       const dateInfo = getDateInfo('event', eventData);
+    [7m  [0m [91m                                            ~~~~~~~~~[0m
+
+FAIL src/features/content/hooks/__tests__/useContentValidation.test.ts
+  ● Test suite failed to run
+
+    [96msrc/features/content/hooks/__tests__/useContentValidation.test.ts[0m:[93m3[0m:[93m39[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../services/contentValidation' or its corresponding type declarations.
+
+    [7m3[0m import { validateContentFields } from '../../../services/contentValidation';
+    [7m [0m [91m                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContentValidation.test.ts[0m:[93m43[0m:[93m11[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'promotionType' does not exist in type 'Partial<Content>'.
+
+    [7m43[0m           promotionType: 'discount',
+    [7m  [0m [91m          ~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContentValidation.test.ts[0m:[93m91[0m:[93m11[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'jobType' does not exist in type 'Partial<Content>'.
+
+    [7m91[0m           jobType: 'full-time',
+    [7m  [0m [91m          ~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContentValidation.test.ts[0m:[93m137[0m:[93m11[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'eventType' does not exist in type 'Partial<Content>'.
+
+    [7m137[0m           eventType: 'conference',
+    [7m   [0m [91m          ~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/__tests__/NewContentForm.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/__tests__/NewContentForm.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/hooks/__tests__/useContentStep.test.ts
+  ● Test suite failed to run
+
+    [96msrc/features/content/hooks/__tests__/useContentStep.test.ts[0m:[93m2[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'validateStep' is declared but its value is never read.
+
+    [7m2[0m import { validateStep } from '../../../utils/validation';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContentStep.test.ts[0m:[93m2[0m:[93m30[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../utils/validation' or its corresponding type declarations.
+
+    [7m2[0m import { validateStep } from '../../../utils/validation';
+    [7m [0m [91m                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContentStep.test.ts[0m:[93m7[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'useContentStep'.
+
+    [7m7[0m       useContentStep('promotion', 1, {
+    [7m [0m [91m      ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContentStep.test.ts[0m:[93m16[0m:[93m12[0m - [91merror[0m[90m TS2304: [0mCannot find name 'PromotionContent'.
+
+    [7m16[0m       } as PromotionContent)
+    [7m  [0m [91m           ~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContentStep.test.ts[0m:[93m35[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'useContentStep'.
+
+    [7m35[0m       useContentStep('promotion', 1, { type: 'promotion' })
+    [7m  [0m [91m      ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContentStep.test.ts[0m:[93m50[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'useContentStep'.
+
+    [7m50[0m       useContentStep('job', 1, {
+    [7m  [0m [91m      ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContentStep.test.ts[0m:[93m56[0m:[93m12[0m - [91merror[0m[90m TS2304: [0mCannot find name 'JobContent'.
+
+    [7m56[0m       } as JobContent)
+    [7m  [0m [91m           ~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContentStep.test.ts[0m:[93m72[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'useContentStep'.
+
+    [7m72[0m       useContentStep('event', 1, {
+    [7m  [0m [91m      ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContentStep.test.ts[0m:[93m79[0m:[93m12[0m - [91merror[0m[90m TS2304: [0mCannot find name 'EventContent'.
+
+    [7m79[0m       } as EventContent)
+    [7m  [0m [91m           ~~~~~~~~~~~~[0m
+
+FAIL src/features/content/hooks/__tests__/useAutoSave.test.ts
+  ● Test suite failed to run
+
+    [96msrc/features/content/hooks/__tests__/useAutoSave.test.ts[0m:[93m3[0m:[93m35[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../repositories/contentRepository' or its corresponding type declarations.
+
+    [7m3[0m import { contentRepository } from '../../../repositories/contentRepository';
+    [7m [0m [91m                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useAutoSave.test.ts[0m:[93m4[0m:[93m25[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../auth/hooks/useAuth' or its corresponding type declarations.
+
+    [7m4[0m import { useAuth } from '../../auth/hooks/useAuth';
+    [7m [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/hooks/__tests__/useContentForm.test.ts
+  ● Test suite failed to run
+
+    [96msrc/features/content/hooks/__tests__/useContentForm.test.ts[0m:[93m4[0m:[93m60[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../services/content' or its corresponding type declarations.
+
+    [7m4[0m import { JobService, PromotionService, EventService } from '../../../services/content';
+    [7m [0m [91m                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContentForm.test.ts[0m:[93m5[0m:[93m25[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../auth/hooks/useAuth' or its corresponding type declarations.
+
+    [7m5[0m import { useAuth } from '../../auth/hooks/useAuth';
+    [7m [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/hooks/__tests__/useContentFormManager.test.ts
+  ● Test suite failed to run
+
+    [96msrc/features/content/hooks/__tests__/useContentFormManager.test.ts[0m:[93m46[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'initialize' does not exist on type '{ step: number; formData: Partial<Content>; error: string | null; isSubmitting: boolean; isDirty: boolean; handleNext: (stepData: Partial<Content>) => Promise<...>; handleBack: () => void; saveDraft: () => Promise<...>; publish: () => Promise<...>; }'.
+
+    [7m46[0m       await result.current.initialize();
+    [7m  [0m [91m                           ~~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/steps/__tests__/EventStep2.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep2.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep2.test.tsx[0m:[93m4[0m:[93m30[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../../../utils/contentValidation' or its corresponding type declarations.
+
+    [7m4[0m import { validateStep } from '../../../../../utils/contentValidation';
+    [7m [0m [91m                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/hooks/__tests__/useContent.test.ts
+  ● Test suite failed to run
+
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m28[0m:[93m41[0m - [91merror[0m[90m TS2554: [0mExpected 1 arguments, but got 0.
+
+    [7m28[0m     const { result } = renderHook(() => useContent());
+    [7m  [0m [91m                                        ~~~~~~~~~~[0m
+
+      [96msrc/features/content/hooks/useContent.ts[0m:[93m5[0m:[93m28[0m
+        [7m5[0m export const useContent = (contentId: string) => {
+        [7m [0m [96m                           ~~~~~~~~~~~~~~~~~[0m
+        An argument for 'contentId' was not provided.
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m30[0m:[93m12[0m - [91merror[0m[90m TS18047: [0m'result.current' is possibly 'null'.
+
+    [7m30[0m     expect(result.current.isLoading).toBe(true);
+    [7m  [0m [91m           ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m30[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'isLoading' does not exist on type 'Content'.
+
+    [7m30[0m     expect(result.current.isLoading).toBe(true);
+    [7m  [0m [91m                          ~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m31[0m:[93m12[0m - [91merror[0m[90m TS18047: [0m'result.current' is possibly 'null'.
+
+    [7m31[0m     expect(result.current.content).toEqual([]);
+    [7m  [0m [91m           ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m31[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'content' does not exist on type 'Content'.
+
+    [7m31[0m     expect(result.current.content).toEqual([]);
+    [7m  [0m [91m                          ~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m37[0m:[93m12[0m - [91merror[0m[90m TS18047: [0m'result.current' is possibly 'null'.
+
+    [7m37[0m     expect(result.current.isLoading).toBe(false);
+    [7m  [0m [91m           ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m37[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'isLoading' does not exist on type 'Content'.
+
+    [7m37[0m     expect(result.current.isLoading).toBe(false);
+    [7m  [0m [91m                          ~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m38[0m:[93m12[0m - [91merror[0m[90m TS18047: [0m'result.current' is possibly 'null'.
+
+    [7m38[0m     expect(result.current.content).toEqual(mockContent);
+    [7m  [0m [91m           ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m38[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'content' does not exist on type 'Content'.
+
+    [7m38[0m     expect(result.current.content).toEqual(mockContent);
+    [7m  [0m [91m                          ~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m46[0m:[93m41[0m - [91merror[0m[90m TS2554: [0mExpected 1 arguments, but got 0.
+
+    [7m46[0m     const { result } = renderHook(() => useContent());
+    [7m  [0m [91m                                        ~~~~~~~~~~[0m
+
+      [96msrc/features/content/hooks/useContent.ts[0m:[93m5[0m:[93m28[0m
+        [7m5[0m export const useContent = (contentId: string) => {
+        [7m [0m [96m                           ~~~~~~~~~~~~~~~~~[0m
+        An argument for 'contentId' was not provided.
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m52[0m:[93m12[0m - [91merror[0m[90m TS18047: [0m'result.current' is possibly 'null'.
+
+    [7m52[0m     expect(result.current.isLoading).toBe(false);
+    [7m  [0m [91m           ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m52[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'isLoading' does not exist on type 'Content'.
+
+    [7m52[0m     expect(result.current.isLoading).toBe(false);
+    [7m  [0m [91m                          ~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m53[0m:[93m12[0m - [91merror[0m[90m TS18047: [0m'result.current' is possibly 'null'.
+
+    [7m53[0m     expect(result.current.error).toBe('Error loading content');
+    [7m  [0m [91m           ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m53[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'error' does not exist on type 'Content'.
+
+    [7m53[0m     expect(result.current.error).toBe('Error loading content');
+    [7m  [0m [91m                          ~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m54[0m:[93m12[0m - [91merror[0m[90m TS18047: [0m'result.current' is possibly 'null'.
+
+    [7m54[0m     expect(result.current.content).toEqual([]);
+    [7m  [0m [91m           ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m54[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'content' does not exist on type 'Content'.
+
+    [7m54[0m     expect(result.current.content).toEqual([]);
+    [7m  [0m [91m                          ~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m58[0m:[93m41[0m - [91merror[0m[90m TS2554: [0mExpected 1 arguments, but got 0.
+
+    [7m58[0m     const { result } = renderHook(() => useContent());
+    [7m  [0m [91m                                        ~~~~~~~~~~[0m
+
+      [96msrc/features/content/hooks/useContent.ts[0m:[93m5[0m:[93m28[0m
+        [7m5[0m export const useContent = (contentId: string) => {
+        [7m [0m [96m                           ~~~~~~~~~~~~~~~~~[0m
+        An argument for 'contentId' was not provided.
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m61[0m:[93m7[0m - [91merror[0m[90m TS18047: [0m'result.current' is possibly 'null'.
+
+    [7m61[0m       result.current.setFilters({
+    [7m  [0m [91m      ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m61[0m:[93m22[0m - [91merror[0m[90m TS2339: [0mProperty 'setFilters' does not exist on type 'Content'.
+
+    [7m61[0m       result.current.setFilters({
+    [7m  [0m [91m                     ~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m70[0m:[93m12[0m - [91merror[0m[90m TS18047: [0m'result.current' is possibly 'null'.
+
+    [7m70[0m     expect(result.current.filters).toEqual({
+    [7m  [0m [91m           ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m70[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'filters' does not exist on type 'Content'.
+
+    [7m70[0m     expect(result.current.filters).toEqual({
+    [7m  [0m [91m                          ~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m80[0m:[93m41[0m - [91merror[0m[90m TS2554: [0mExpected 1 arguments, but got 0.
+
+    [7m80[0m     const { result } = renderHook(() => useContent());
+    [7m  [0m [91m                                        ~~~~~~~~~~[0m
+
+      [96msrc/features/content/hooks/useContent.ts[0m:[93m5[0m:[93m28[0m
+        [7m5[0m export const useContent = (contentId: string) => {
+        [7m [0m [96m                           ~~~~~~~~~~~~~~~~~[0m
+        An argument for 'contentId' was not provided.
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m83[0m:[93m13[0m - [91merror[0m[90m TS18047: [0m'result.current' is possibly 'null'.
+
+    [7m83[0m       await result.current.refresh();
+    [7m  [0m [91m            ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m83[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'refresh' does not exist on type 'Content'.
+
+    [7m83[0m       await result.current.refresh();
+    [7m  [0m [91m                           ~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m87[0m:[93m12[0m - [91merror[0m[90m TS18047: [0m'result.current' is possibly 'null'.
+
+    [7m87[0m     expect(result.current.content).toEqual(mockContent);
+    [7m  [0m [91m           ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/__tests__/useContent.test.ts[0m:[93m87[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'content' does not exist on type 'Content'.
+
+    [7m87[0m     expect(result.current.content).toEqual(mockContent);
+    [7m  [0m [91m                          ~~~~~~~[0m
+
+FAIL src/features/content/components/__tests__/ContentPreview.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/__tests__/ContentPreview.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/hooks/__tests__/useContentFilters.test.ts
+  ● Test suite failed to run
+
+    [96msrc/features/content/hooks/useContentFilters.ts[0m:[93m25[0m:[93m16[0m - [91merror[0m[90m TS2345: [0mArgument of type '(prev: ContentFilter) => { dateRange: { start?: string | undefined; end?: string | undefined; }; type?: ContentType | undefined; status?: string | undefined; }' is not assignable to parameter of type 'SetStateAction<ContentFilter>'.
+      Type '(prev: ContentFilter) => { dateRange: { start?: string | undefined; end?: string | undefined; }; type?: ContentType | undefined; status?: string | undefined; }' is not assignable to type '(prevState: ContentFilter) => ContentFilter'.
+        Call signature return types '{ dateRange: { start?: string | undefined; end?: string | undefined; }; type?: ContentType | undefined; status?: string | undefined; }' and 'ContentFilter' are incompatible.
+          The types of 'dateRange.start' are incompatible between these types.
+            Type 'string | undefined' is not assignable to type 'string'.
+              Type 'undefined' is not assignable to type 'string'.
+
+    [7m25[0m     setFilters(prev => {
+    [7m  [0m [91m               ~~~~~~~~~[0m
+    [96msrc/features/content/hooks/useContentFilters.ts[0m:[93m38[0m:[93m16[0m - [91merror[0m[90m TS2790: [0mThe operand of a 'delete' operator must be optional.
+
+    [7m38[0m         delete updated.dateRange;
+    [7m  [0m [91m               ~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/hooks/useContentFilters.ts[0m:[93m52[0m:[93m5[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+    [7m52[0m   };
+    [7m  [0m [91m    [0m
+
+      [96msrc/features/content/hooks/useContentFilters.ts[0m:[93m5[0m:[93m37[0m
+        [7m5[0m export function useContentFilters() {
+        [7m [0m [96m                                    ~[0m
+        The parser expected to find a '}' to match the '{' token here.
+
+FAIL src/services/content/__tests__/validation.test.ts
+  ● Test suite failed to run
+
+    [96msrc/services/content/__tests__/validation.test.ts[0m:[93m3[0m:[93m10[0m - [91merror[0m[90m TS6133: [0m'getFirestore' is declared but its value is never read.
+
+    [7m3[0m import { getFirestore, initializeFirestore, persistentLocalCache, persistentMultipleTabManager } from 'firebase/firestore';
+    [7m [0m [91m         ~~~~~~~~~~~~[0m
+    [96msrc/services/content/__tests__/validation.test.ts[0m:[93m7[0m:[93m11[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m7[0m   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    [7m [0m [91m          ~~~~~~~~~~~[0m
+    [96msrc/services/content/__tests__/validation.test.ts[0m:[93m8[0m:[93m15[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m8[0m   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    [7m [0m [91m              ~~~~~~~~~~~[0m
+    [96msrc/services/content/__tests__/validation.test.ts[0m:[93m9[0m:[93m14[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m9[0m   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    [7m [0m [91m             ~~~~~~~~~~~[0m
+    [96msrc/services/content/__tests__/validation.test.ts[0m:[93m10[0m:[93m18[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m10[0m   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    [7m  [0m [91m                 ~~~~~~~~~~~[0m
+    [96msrc/services/content/__tests__/validation.test.ts[0m:[93m11[0m:[93m22[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m11[0m   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    [7m  [0m [91m                     ~~~~~~~~~~~[0m
+    [96msrc/services/content/__tests__/validation.test.ts[0m:[93m12[0m:[93m10[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m12[0m   appId: import.meta.env.VITE_FIREBASE_APP_ID
+    [7m  [0m [91m         ~~~~~~~~~~~[0m
+
+FAIL src/features/content/components/__tests__/ContentFilters.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/__tests__/ContentFilters.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/__tests__/ContentFilters.test.tsx[0m:[93m22[0m:[93m8[0m - [91merror[0m[90m TS2739: [0mType '{ filters: ContentFilter; onFilterChange: Mock<any, any, any>; }' is missing the following properties from type 'ContentFiltersProps': onClose, isOpen
+
+    [7m22[0m       <ContentFilters
+    [7m  [0m [91m       ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/__tests__/ContentFilters.test.tsx[0m:[93m35[0m:[93m8[0m - [91merror[0m[90m TS2739: [0mType '{ filters: ContentFilter; onFilterChange: Mock<any, any, any>; }' is missing the following properties from type 'ContentFiltersProps': onClose, isOpen
+
+    [7m35[0m       <ContentFilters
+    [7m  [0m [91m       ~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/__tests__/ContentFilters.test.tsx[0m:[93m52[0m:[93m8[0m - [91merror[0m[90m TS2739: [0mType '{ filters: ContentFilter; onFilterChange: Mock<any, any, any>; }' is missing the following properties from type 'ContentFiltersProps': onClose, isOpen
+
+    [7m52[0m       <ContentFilters
+    [7m  [0m [91m       ~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/components/__tests__/ContentList.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/__tests__/ContentList.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/__tests__/ContentList.test.tsx[0m:[93m57[0m:[93m17[0m - [91merror[0m[90m TS2322: [0mType '{ status: string; id: string; type: ContentType | string; title: string; description?: string; validityPeriod?: ValidityPeriod; ... 11 more ...; data?: Record<string, any>; }' is not assignable to type 'Content'.
+      Types of property 'status' are incompatible.
+        Type 'string' is not assignable to type '"published" | "draft" | "archived" | undefined'.
+
+    [7m57[0m         items={[draftItem]}
+    [7m  [0m [91m                ~~~~~~~~~[0m
+    [96msrc/features/content/components/__tests__/ContentList.test.tsx[0m:[93m77[0m:[93m25[0m - [91merror[0m[90m TS2322: [0mType '{ status: string; id: string; type: string; title: string; description?: string | undefined; validityPeriod?: ValidityPeriod | undefined; requirements?: string[] | undefined; ... 10 more ...; data?: Record<...> | undefined; }[]' is not assignable to type 'Content[]'.
+      Type '{ status: string; id: string; type: ContentType | string; title: string; description?: string; validityPeriod?: ValidityPeriod; ... 11 more ...; data?: Record<string, any>; }' is not assignable to type 'Content'.
+        Types of property 'status' are incompatible.
+          Type 'string' is not assignable to type '"published" | "draft" | "archived" | undefined'.
+
+    [7m77[0m     render(<ContentList items={items} onItemClick={mockOnItemClick} />);
+    [7m  [0m [91m                        ~~~~~[0m
+
+      [96msrc/features/content/components/ContentList.tsx[0m:[93m6[0m:[93m3[0m
+        [7m6[0m   items: Content[];
+        [7m [0m [96m  ~~~~~[0m
+        The expected type comes from property 'items' which is declared here on type 'IntrinsicAttributes & ContentListProps'
+
+FAIL src/services/content/__tests__/base.service.test.ts
+  ● Test suite failed to run
+
+    [96msrc/services/content/__tests__/base.service.test.ts[0m:[93m3[0m:[93m10[0m - [91merror[0m[90m TS6133: [0m'getFirestore' is declared but its value is never read.
+
+    [7m3[0m import { getFirestore, initializeFirestore, persistentLocalCache, persistentMultipleTabManager } from 'firebase/firestore';
+    [7m [0m [91m         ~~~~~~~~~~~~[0m
+    [96msrc/services/content/__tests__/base.service.test.ts[0m:[93m7[0m:[93m11[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m7[0m   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    [7m [0m [91m          ~~~~~~~~~~~[0m
+    [96msrc/services/content/__tests__/base.service.test.ts[0m:[93m8[0m:[93m15[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m8[0m   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    [7m [0m [91m              ~~~~~~~~~~~[0m
+    [96msrc/services/content/__tests__/base.service.test.ts[0m:[93m9[0m:[93m14[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m9[0m   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    [7m [0m [91m             ~~~~~~~~~~~[0m
+    [96msrc/services/content/__tests__/base.service.test.ts[0m:[93m10[0m:[93m18[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m10[0m   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    [7m  [0m [91m                 ~~~~~~~~~~~[0m
+    [96msrc/services/content/__tests__/base.service.test.ts[0m:[93m11[0m:[93m22[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m11[0m   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    [7m  [0m [91m                     ~~~~~~~~~~~[0m
+    [96msrc/services/content/__tests__/base.service.test.ts[0m:[93m12[0m:[93m10[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m12[0m   appId: import.meta.env.VITE_FIREBASE_APP_ID
+    [7m  [0m [91m         ~~~~~~~~~~~[0m
+
+FAIL src/services/__tests__/content/validation.test.ts
+  ● Test suite failed to run
+
+    [96msrc/services/__tests__/content/validation.test.ts[0m:[93m35[0m:[93m11[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'promotionType' does not exist in type 'Partial<Content>'.
+
+    [7m35[0m           promotionType: 'discount',
+    [7m  [0m [91m          ~~~~~~~~~~~~~[0m
+    [96msrc/services/__tests__/content/validation.test.ts[0m:[93m69[0m:[93m11[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'jobType' does not exist in type 'Partial<Content>'.
+
+    [7m69[0m           jobType: 'full-time',
+    [7m  [0m [91m          ~~~~~~~[0m
+    [96msrc/services/__tests__/content/validation.test.ts[0m:[93m101[0m:[93m11[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'eventType' does not exist in type 'Partial<Content>'.
+
+    [7m101[0m           eventType: 'workshop',
+    [7m   [0m [91m          ~~~~~~~~~[0m
+
+FAIL src/services/__tests__/content/storage.test.ts
+  ● Test suite failed to run
+
+    [96msrc/services/__tests__/content/storage.test.ts[0m:[93m1[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"../../content/validation"' has no exported member 'validateFile'.
+
+    [7m1[0m import { validateFile } from '../../content/validation';
+    [7m [0m [91m         ~~~~~~~~~~~~[0m
+    [96msrc/services/__tests__/content/storage.test.ts[0m:[93m3[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'ApiError' is declared but its value is never read.
+
+    [7m3[0m import { ApiError } from '../../../utils/apiErrors';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/services/__tests__/content/promotion.service.test.ts
+  ● Test suite failed to run
+
+    [96msrc/services/__tests__/content/promotion.service.test.ts[0m:[93m3[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'ApiError' is declared but its value is never read.
+
+    [7m3[0m import { ApiError } from '../../../utils/apiErrors';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/services/__tests__/content/promotion.service.test.ts[0m:[93m41[0m:[93m9[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ title: string; promotionType: string; location: string; }' is not assignable to parameter of type 'Omit<PromotionContent, "type" | "id" | "createdAt" | "views" | "engagement">'.
+      Types of property 'promotionType' are incompatible.
+        Type 'string' is not assignable to type '"discount" | "offer" | "event"'.
+
+    [7m41[0m         promotionData,
+    [7m  [0m [91m        ~~~~~~~~~~~~~[0m
+    [96msrc/services/__tests__/content/promotion.service.test.ts[0m:[93m70[0m:[93m56[0m - [91merror[0m[90m TS2345: [0mArgument of type '{}' is not assignable to parameter of type 'Omit<PromotionContent, "type" | "id" | "createdAt" | "views" | "engagement">'.
+      Type '{}' is missing the following properties from type 'Omit<PromotionContent, "type" | "id" | "createdAt" | "views" | "engagement">': promotionType, location, title
+
+    [7m70[0m       await expect(service.createPromotion(mockUserId, {}))
+    [7m  [0m [91m                                                       ~~[0m
+
+FAIL src/repositories/content/__tests__/content.repository.test.ts
+  ● Test suite failed to run
+
+    [96msrc/repositories/content/__tests__/content.repository.test.ts[0m:[93m7[0m:[93m11[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m7[0m   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    [7m [0m [91m          ~~~~~~~~~~~[0m
+    [96msrc/repositories/content/__tests__/content.repository.test.ts[0m:[93m8[0m:[93m15[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m8[0m   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    [7m [0m [91m              ~~~~~~~~~~~[0m
+    [96msrc/repositories/content/__tests__/content.repository.test.ts[0m:[93m9[0m:[93m14[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m9[0m   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    [7m [0m [91m             ~~~~~~~~~~~[0m
+    [96msrc/repositories/content/__tests__/content.repository.test.ts[0m:[93m10[0m:[93m18[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m10[0m   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    [7m  [0m [91m                 ~~~~~~~~~~~[0m
+    [96msrc/repositories/content/__tests__/content.repository.test.ts[0m:[93m11[0m:[93m22[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m11[0m   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    [7m  [0m [91m                     ~~~~~~~~~~~[0m
+    [96msrc/repositories/content/__tests__/content.repository.test.ts[0m:[93m12[0m:[93m10[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+    [7m12[0m   appId: import.meta.env.VITE_FIREBASE_APP_ID
+    [7m  [0m [91m         ~~~~~~~~~~~[0m
+
+FAIL src/services/__tests__/content/base.service.test.ts
+  ● Test suite failed to run
+
+    [96msrc/services/__tests__/content/base.service.test.ts[0m:[93m3[0m:[93m10[0m - [91merror[0m[90m TS6133: [0m'Content' is declared but its value is never read.
+
+    [7m3[0m import { Content, ContentType } from '../../../types/content';
+    [7m [0m [91m         ~~~~~~~[0m
+    [96msrc/services/__tests__/content/base.service.test.ts[0m:[93m100[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'getContent' does not exist on type 'BaseContentService'.
+
+    [7m100[0m       const result = await service.getContent(mockContentId);
+    [7m   [0m [91m                                   ~~~~~~~~~~[0m
+    [96msrc/services/__tests__/content/base.service.test.ts[0m:[93m113[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'getContent' does not exist on type 'BaseContentService'.
+
+    [7m113[0m       await expect(service.getContent(mockContentId))
+    [7m   [0m [91m                           ~~~~~~~~~~[0m
+
+FAIL src/services/__tests__/content/job.service.test.ts
+  ● Test suite failed to run
+
+    [96msrc/services/__tests__/content/job.service.test.ts[0m:[93m3[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'ApiError' is declared but its value is never read.
+
+    [7m3[0m import { ApiError } from '../../../utils/apiErrors';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/services/__tests__/content/job.service.test.ts[0m:[93m60[0m:[93m50[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ title: string; }' is not assignable to parameter of type 'Omit<JobContent, "type" | "id" | "createdAt" | "views" | "engagement">'.
+      Type '{ title: string; }' is missing the following properties from type 'Omit<JobContent, "type" | "id" | "createdAt" | "views" | "engagement">': jobType, jobLocation
+
+    [7m60[0m       await expect(service.createJob(mockUserId, jobData))
+    [7m  [0m [91m                                                 ~~~~~~~[0m
+
+FAIL src/utils/__tests__/contentValidation.test.ts
+  ● Test suite failed to run
+
+    [96msrc/utils/__tests__/contentValidation.test.ts[0m:[93m73[0m:[93m60[0m - [91merror[0m[90m TS2559: [0mType '{ jobType: string; jobLocation: string; }' has no properties in common with type 'Partial<Content>'.
+
+    [7m73[0m       const result = validateStep('job' as ContentType, 2, data);
+    [7m  [0m [91m                                                           ~~~~[0m
+    [96msrc/utils/__tests__/contentValidation.test.ts[0m:[93m82[0m:[93m66[0m - [91merror[0m[90m TS2559: [0mType '{ promotionType: string; location: string; }' has no properties in common with type 'Partial<Content>'.
+
+    [7m82[0m       const result = validateStep('promotion' as ContentType, 2, data);
+    [7m  [0m [91m                                                                 ~~~~[0m
+    [96msrc/utils/__tests__/contentValidation.test.ts[0m:[93m91[0m:[93m62[0m - [91merror[0m[90m TS2559: [0mType '{ eventType: string; eventDate: string; }' has no properties in common with type 'Partial<Content>'.
+
+    [7m91[0m       const result = validateStep('event' as ContentType, 2, data);
+    [7m  [0m [91m                                                             ~~~~[0m
+
+FAIL src/config/__tests__/firebase.test.ts
+  ● Test suite failed to run
+
+    [96msrc/config/__tests__/firebase.test.ts[0m:[93m2[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'getAuth' is declared but its value is never read.
+
+    [7m2[0m import { getAuth } from 'firebase/auth';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/config/__tests__/firebase.test.ts[0m:[93m3[0m:[93m10[0m - [91merror[0m[90m TS6133: [0m'getFirestore' is declared but its value is never read.
+
+    [7m3[0m import { getFirestore, initializeFirestore, persistentLocalCache, persistentMultipleTabManager } from 'firebase/firestore';
+    [7m [0m [91m         ~~~~~~~~~~~~[0m
+    [96msrc/config/__tests__/firebase.test.ts[0m:[93m3[0m:[93m67[0m - [91merror[0m[90m TS6133: [0m'persistentMultipleTabManager' is declared but its value is never read.
+
+    [7m3[0m import { getFirestore, initializeFirestore, persistentLocalCache, persistentMultipleTabManager } from 'firebase/firestore';
+    [7m [0m [91m                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/config/__tests__/firebase.test.ts[0m:[93m4[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'getStorage' is declared but its value is never read.
+
+    [7m4[0m import { getStorage } from 'firebase/storage';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/config/__tests__/firebase.test.ts[0m:[93m5[0m:[93m10[0m - [91merror[0m[90m TS7034: [0mVariable 'app' implicitly has type 'any' in some locations where its type cannot be determined.
+
+    [7m5[0m import { app, auth, db, storage } from '../firebase';
+    [7m [0m [91m         ~~~[0m
+    [96msrc/config/__tests__/firebase.test.ts[0m:[93m5[0m:[93m15[0m - [91merror[0m[90m TS7034: [0mVariable 'auth' implicitly has type 'any' in some locations where its type cannot be determined.
+
+    [7m5[0m import { app, auth, db, storage } from '../firebase';
+    [7m [0m [91m              ~~~~[0m
+    [96msrc/config/__tests__/firebase.test.ts[0m:[93m5[0m:[93m21[0m - [91merror[0m[90m TS7034: [0mVariable 'db' implicitly has type 'any' in some locations where its type cannot be determined.
+
+    [7m5[0m import { app, auth, db, storage } from '../firebase';
+    [7m [0m [91m                    ~~[0m
+    [96msrc/config/__tests__/firebase.test.ts[0m:[93m5[0m:[93m25[0m - [91merror[0m[90m TS7034: [0mVariable 'storage' implicitly has type 'any' in some locations where its type cannot be determined.
+
+    [7m5[0m import { app, auth, db, storage } from '../firebase';
+    [7m [0m [91m                        ~~~~~~~[0m
+    [96msrc/config/__tests__/firebase.test.ts[0m:[93m38[0m:[93m12[0m - [91merror[0m[90m TS7005: [0mVariable 'app' implicitly has an 'any' type.
+
+    [7m38[0m     expect(app).toBeDefined();
+    [7m  [0m [91m           ~~~[0m
+    [96msrc/config/__tests__/firebase.test.ts[0m:[93m39[0m:[93m12[0m - [91merror[0m[90m TS7005: [0mVariable 'auth' implicitly has an 'any' type.
+
+    [7m39[0m     expect(auth).toBeDefined();
+    [7m  [0m [91m           ~~~~[0m
+    [96msrc/config/__tests__/firebase.test.ts[0m:[93m40[0m:[93m12[0m - [91merror[0m[90m TS7005: [0mVariable 'db' implicitly has an 'any' type.
+
+    [7m40[0m     expect(db).toBeDefined();
+    [7m  [0m [91m           ~~[0m
+    [96msrc/config/__tests__/firebase.test.ts[0m:[93m41[0m:[93m12[0m - [91merror[0m[90m TS7005: [0mVariable 'storage' implicitly has an 'any' type.
+
+    [7m41[0m     expect(storage).toBeDefined();
+    [7m  [0m [91m           ~~~~~~~[0m
+
+FAIL src/hooks/__tests__/useContentFormManager.test.ts
+  ● Test suite failed to run
+
+    [96msrc/hooks/useContentFormManager.ts[0m:[93m40[0m:[93m51[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ title: string; description: string; createdAt: string; id?: string | undefined; type?: string | undefined; validityPeriod?: ValidityPeriod | undefined; requirements?: string[] | undefined; ... 10 more ...; data?: Record<string, any> | undefined; }' is not assignable to parameter of type 'Omit<Content, "id">'.
+      Types of property 'type' are incompatible.
+        Type 'string | undefined' is not assignable to type 'string'.
+          Type 'undefined' is not assignable to type 'string'.
+
+    [7m 40[0m         const id = await contentRepository.create({
+    [7m   [0m [91m                                                  ~[0m
+    [7m 41[0m           ...state.data,
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m...[0m 
+    [7m 44[0m           createdAt: new Date().toISOString()
+    [7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m 45[0m         });
+    [7m   [0m [91m~~~~~~~~~[0m
+
+Failed to collect coverage from /home/project/src/services/content/form.service.ts
+ERROR: [96msrc/services/content/form.service.ts[0m:[93m38[0m:[93m64[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Partial<JobContent>' is not assignable to parameter of type 'Omit<JobContent, "id" | "createdAt" | "views" | "engagement" | "type">'.
+  Types of property 'jobType' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+[7m38[0m           return await this.jobService.createJob(data.userId!, data as Partial<JobContent>);
+[7m  [0m [91m                                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/services/content/form.service.ts[0m:[93m40[0m:[93m76[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Partial<PromotionContent>' is not assignable to parameter of type 'Omit<PromotionContent, "id" | "createdAt" | "views" | "engagement" | "type">'.
+  Types of property 'title' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+[7m40[0m           return await this.promotionService.createPromotion(data.userId!, data as Partial<PromotionContent>);
+[7m  [0m [91m                                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/services/content/form.service.ts[0m:[93m42[0m:[93m68[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Partial<EventContent>' is not assignable to parameter of type 'Omit<EventContent, "id" | "createdAt" | "views" | "engagement" | "type">'.
+  Types of property 'title' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+[7m42[0m           return await this.eventService.createEvent(data.userId!, data as Partial<EventContent>);
+[7m  [0m [91m                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/services/content/form.service.ts[0m:[93m62[0m:[93m64[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ status: "published"; type?: "job" | undefined; jobType?: string | undefined; jobLocation?: string | undefined; salary?: { min?: number; max?: number; currency: string; period: "hour" | "month" | "year"; } | undefined; ... 19 more ...; data?: Record<string, any> | undefined; }' is not assignable to parameter of type 'Omit<JobContent, "id" | "createdAt" | "views" | "engagement" | "type">'.
+  Types of property 'jobType' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+[7m62[0m           return await this.jobService.createJob(data.userId!, {
+[7m  [0m [91m                                                               ~[0m
+[7m63[0m             ...data as Partial<JobContent>,
+[7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m64[0m             status: 'published'
+[7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m65[0m           });
+[7m  [0m [91m~~~~~~~~~~~[0m
+[96msrc/services/content/form.service.ts[0m:[93m67[0m:[93m76[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ status: "published"; type?: "promotion" | undefined; promotionType?: "event" | "discount" | "offer" | undefined; location?: "store" | "online" | "both" | undefined; usageLimit?: string | undefined; ... 15 more ...; data?: Record<string, any> | undefined; }' is not assignable to parameter of type 'Omit<PromotionContent, "id" | "createdAt" | "views" | "engagement" | "type">'.
+  Types of property 'title' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+[7m67[0m           return await this.promotionService.createPromotion(data.userId!, {
+[7m  [0m [91m                                                                           ~[0m
+[7m68[0m             ...data as Partial<PromotionContent>,
+[7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m69[0m             status: 'published'
+[7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m70[0m           });
+[7m  [0m [91m~~~~~~~~~~~[0m
+[96msrc/services/content/form.service.ts[0m:[93m72[0m:[93m68[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ status: "published"; type?: "event" | undefined; eventType?: string | undefined; eventLocation?: string | undefined; eventDate?: string | undefined; endDate?: string | undefined; venue?: string | undefined; ... 20 more ...; data?: Record<string, any> | undefined; }' is not assignable to parameter of type 'Omit<EventContent, "id" | "createdAt" | "views" | "engagement" | "type">'.
+  Types of property 'title' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+[7m72[0m           return await this.eventService.createEvent(data.userId!, {
+[7m  [0m [91m                                                                   ~[0m
+[7m73[0m             ...data as Partial<EventContent>,
+[7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m74[0m             status: 'published'
+[7m  [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m75[0m           });
+[7m  [0m [91m~~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/services/content/validation.ts
+ERROR: [96msrc/services/content/validation.ts[0m:[93m2[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'ApiError' is declared but its value is never read.
+
+[7m2[0m import { ApiError } from '../../utils/apiErrors';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/services/content/validation.ts[0m:[93m31[0m:[93m13[0m - [91merror[0m[90m TS2339: [0mProperty 'promotionType' does not exist on type 'Partial<Content>'.
+
+[7m31[0m   if (!data.promotionType) errors.push('Promotion type is required');
+[7m  [0m [91m            ~~~~~~~~~~~~~[0m
+[96msrc/services/content/validation.ts[0m:[93m32[0m:[93m13[0m - [91merror[0m[90m TS2339: [0mProperty 'location' does not exist on type 'Partial<Content>'.
+
+[7m32[0m   if (!data.location) errors.push('Location is required');
+[7m  [0m [91m            ~~~~~~~~[0m
+[96msrc/services/content/validation.ts[0m:[93m39[0m:[93m13[0m - [91merror[0m[90m TS2339: [0mProperty 'jobType' does not exist on type 'Partial<Content>'.
+
+[7m39[0m   if (!data.jobType) errors.push('Job type is required');
+[7m  [0m [91m            ~~~~~~~[0m
+[96msrc/services/content/validation.ts[0m:[93m40[0m:[93m13[0m - [91merror[0m[90m TS2339: [0mProperty 'jobLocation' does not exist on type 'Partial<Content>'.
+
+[7m40[0m   if (!data.jobLocation) errors.push('Job location is required');
+[7m  [0m [91m            ~~~~~~~~~~~[0m
+[96msrc/services/content/validation.ts[0m:[93m42[0m:[93m13[0m - [91merror[0m[90m TS2339: [0mProperty 'applicationDeadline' does not exist on type 'Partial<Content>'.
+
+[7m42[0m   if (!data.applicationDeadline) errors.push('Application deadline is required');
+[7m  [0m [91m            ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/services/content/validation.ts[0m:[93m46[0m:[93m13[0m - [91merror[0m[90m TS2339: [0mProperty 'eventType' does not exist on type 'Partial<Content>'.
+
+[7m46[0m   if (!data.eventType) errors.push('Event type is required');
+[7m  [0m [91m            ~~~~~~~~~[0m
+[96msrc/services/content/validation.ts[0m:[93m47[0m:[93m13[0m - [91merror[0m[90m TS2339: [0mProperty 'eventLocation' does not exist on type 'Partial<Content>'.
+
+[7m47[0m   if (!data.eventLocation) errors.push('Event location is required');
+[7m  [0m [91m            ~~~~~~~~~~~~~[0m
+[96msrc/services/content/validation.ts[0m:[93m48[0m:[93m13[0m - [91merror[0m[90m TS2339: [0mProperty 'eventDate' does not exist on type 'Partial<Content>'.
+
+[7m48[0m   if (!data.eventDate) errors.push('Event date is required');
+[7m  [0m [91m            ~~~~~~~~~[0m
+[96msrc/services/content/validation.ts[0m:[93m49[0m:[93m13[0m - [91merror[0m[90m TS2339: [0mProperty 'venue' does not exist on type 'Partial<Content>'.
+
+[7m49[0m   if (!data.venue) errors.push('Venue is required');
+[7m  [0m [91m            ~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/services/content/promotion.service.ts
+ERROR: [96msrc/services/content/promotion.service.ts[0m:[93m31[0m:[93m9[0m - [91merror[0m[90m TS2561: [0mObject literal may only specify known properties, but 'coverImage' does not exist in type 'Omit<PromotionContent, "id" | "createdAt" | "views" | "engagement">'. Did you mean to write 'coverImageUrl'?
+
+[7m31[0m         coverImage: coverImageUrl,
+[7m  [0m [91m        ~~~~~~~~~~[0m
+[96msrc/services/content/promotion.service.ts[0m:[93m57[0m:[93m17[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type '{ type?: "promotion" | undefined; promotionType?: "discount" | "offer" | "event" | undefined; location?: "store" | "online" | "both" | undefined; usageLimit?: string | undefined; ... 16 more ...; data?: Record<...> | undefined; }'. Did you mean 'coverImageUrl'?
+
+[7m57[0m         updates.coverImage = await uploadContentImage(coverImage, data.userId!, 'promotion-cover');
+[7m  [0m [91m                ~~~~~~~~~~[0m
+[96msrc/services/content/promotion.service.ts[0m:[93m64[0m:[93m29[0m - [91merror[0m[90m TS2339: [0mProperty 'updatePromotion' does not exist on type 'ContentRepository'.
+
+[7m64[0m       await this.repository.updatePromotion(id, updates);
+[7m  [0m [91m                            ~~~~~~~~~~~~~~~[0m
+[96msrc/services/content/promotion.service.ts[0m:[93m82[0m:[93m68[0m - [91merror[0m[90m TS2339: [0mProperty 'promotionType' does not exist on type 'Content'.
+
+[7m82[0m       if (!promotion.title || !promotion.description || !promotion.promotionType ||
+[7m  [0m [91m                                                                   ~~~~~~~~~~~~~[0m
+[96msrc/services/content/promotion.service.ts[0m:[93m83[0m:[93m22[0m - [91merror[0m[90m TS2339: [0mProperty 'location' does not exist on type 'Content'.
+
+[7m83[0m           !promotion.location || !promotion.validityPeriod) {
+[7m  [0m [91m                     ~~~~~~~~[0m
+[96msrc/services/content/promotion.service.ts[0m:[93m100[0m:[93m29[0m - [91merror[0m[90m TS2339: [0mProperty 'updatePromotion' does not exist on type 'ContentRepository'.
+
+[7m100[0m       await this.repository.updatePromotion(id, {
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/ContentFilters.tsx
+ERROR: [96msrc/features/content/components/ContentFilters.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/features/content/components/ContentFilters.tsx[0m:[93m21[0m:[93m7[0m - [91merror[0m[90m TS2322: [0mType '{ start?: string | undefined; end?: string | undefined; }' is not assignable to type '{ start: string; end: string; }'.
+  Types of property 'start' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+[7m21[0m       dateRange: {
+[7m  [0m [91m      ~~~~~~~~~[0m
+
+  [96msrc/features/content/types/filterTypes.ts[0m:[93m6[0m:[93m3[0m
+    [7m6[0m   dateRange?: {
+    [7m [0m [96m  ~~~~~~~~~[0m
+    The expected type comes from property 'dateRange' which is declared here on type 'ContentFilter'
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/ContentHeader.tsx
+ERROR: [96msrc/features/content/components/ContentHeader.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/services/content/base.service.ts
+ERROR: [96msrc/services/content/base.service.ts[0m:[93m61[0m:[93m44[0m - [91merror[0m[90m TS2345: [0mArgument of type 'string' is not assignable to parameter of type 'ContentType'.
+
+[7m61[0m       const errors = validateContentFields(content.type, content);
+[7m  [0m [91m                                           ~~~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/ContentList.tsx
+ERROR: [96msrc/features/content/components/ContentList.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/features/content/components/ContentList.tsx[0m:[93m59[0m:[93m21[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Content'. Did you mean 'coverImageUrl'?
+
+[7m59[0m               {item.coverImage && (
+[7m  [0m [91m                    ~~~~~~~~~~[0m
+
+  [96msrc/types/content.ts[0m:[93m27[0m:[93m3[0m
+    [7m27[0m   coverImageUrl?: string;
+    [7m  [0m [96m  ~~~~~~~~~~~~~[0m
+    'coverImageUrl' is declared here.
+[96msrc/features/content/components/ContentList.tsx[0m:[93m61[0m:[93m29[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Content'. Did you mean 'coverImageUrl'?
+
+[7m61[0m                   src={item.coverImage}
+[7m  [0m [91m                            ~~~~~~~~~~[0m
+
+  [96msrc/types/content.ts[0m:[93m27[0m:[93m3[0m
+    [7m27[0m   coverImageUrl?: string;
+    [7m  [0m [96m  ~~~~~~~~~~~~~[0m
+    'coverImageUrl' is declared here.
+[96msrc/features/content/components/ContentList.tsx[0m:[93m86[0m:[93m33[0m - [91merror[0m[90m TS2345: [0mArgument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+
+[7m86[0m                     {formatDate(item.createdAt)}
+[7m  [0m [91m                                ~~~~~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/ProgressIndicator.tsx
+ERROR: [96msrc/features/content/components/ProgressIndicator.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/services/content/job.service.ts
+ERROR: [96msrc/services/content/job.service.ts[0m:[93m14[0m:[93m19[0m - [91merror[0m[90m TS2304: [0mCannot find name 'Content'.
+
+[7m14[0m     data: Partial<Content>
+[7m  [0m [91m                  ~~~~~~~[0m
+[96msrc/services/content/job.service.ts[0m:[93m75[0m:[93m17[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type '{ type?: "job" | undefined; jobType?: string | undefined; jobLocation?: string | undefined; salary?: { min?: number | undefined; max?: number | undefined; currency: string; period: "hour" | "month" | "year"; } | undefined; ... 20 more ...; data?: Record<...> | undefined; }'. Did you mean 'coverImageUrl'?
+
+[7m75[0m         updates.coverImage = imageUrl;
+[7m  [0m [91m                ~~~~~~~~~~[0m
+[96msrc/services/content/job.service.ts[0m:[93m96[0m:[93m50[0m - [91merror[0m[90m TS2339: [0mProperty 'jobType' does not exist on type 'Content'.
+
+[7m96[0m       if (!job.title || !job.description || !job.jobType ||
+[7m  [0m [91m                                                 ~~~~~~~[0m
+[96msrc/services/content/job.service.ts[0m:[93m97[0m:[93m16[0m - [91merror[0m[90m TS2339: [0mProperty 'jobLocation' does not exist on type 'Content'.
+
+[7m97[0m           !job.jobLocation || !job.requirements) {
+[7m  [0m [91m               ~~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/ContentEmpty.tsx
+ERROR: [96msrc/features/content/components/ContentEmpty.tsx[0m:[93m16[0m:[93m30[0m - [91merror[0m[90m TS2304: [0mCannot find name 'type'.
+
+[7m16[0m       onClick={() => onClick(type)}
+[7m  [0m [91m                             ~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/ContentPreview.tsx
+ERROR: [96msrc/features/content/components/ContentPreview.tsx[0m:[93m25[0m:[93m9[0m - [91merror[0m[90m TS6133: [0m'typeLabel' is declared but its value is never read.
+
+[7m25[0m   const typeLabel = type ? getTypeLabel(type, data) : '';
+[7m  [0m [91m        ~~~~~~~~~[0m
+[96msrc/features/content/components/ContentPreview.tsx[0m:[93m53[0m:[93m10[0m - [91merror[0m[90m TS2554: [0mExpected 1-2 arguments, but got 0.
+
+[7m53[0m         {getTypeLabel() && (
+[7m  [0m [91m         ~~~~~~~~~~~~[0m
+
+  [96msrc/features/content/utils/contentFormatters.ts[0m:[93m11[0m:[93m30[0m
+    [7m11[0m export function getTypeLabel(type: Content['type'], data?: Partial<Content>): string {
+    [7m  [0m [96m                             ~~~~~~~~~~~~~~~~~~~~~[0m
+    An argument for 'type' was not provided.
+[96msrc/features/content/components/ContentPreview.tsx[0m:[93m55[0m:[93m14[0m - [91merror[0m[90m TS2554: [0mExpected 1-2 arguments, but got 0.
+
+[7m55[0m             {getTypeLabel()}
+[7m  [0m [91m             ~~~~~~~~~~~~[0m
+
+  [96msrc/features/content/utils/contentFormatters.ts[0m:[93m11[0m:[93m30[0m
+    [7m11[0m export function getTypeLabel(type: Content['type'], data?: Partial<Content>): string {
+    [7m  [0m [96m                             ~~~~~~~~~~~~~~~~~~~~~[0m
+    An argument for 'type' was not provided.
+STACK: 
+Failed to collect coverage from /home/project/src/services/content/storage.ts
+ERROR: [96msrc/services/content/storage.ts[0m:[93m2[0m:[93m10[0m - [91merror[0m[90m TS7034: [0mVariable 'storage' implicitly has type 'any' in some locations where its type cannot be determined.
+
+[7m2[0m import { storage } from '../../config/firebase';
+[7m [0m [91m         ~~~~~~~[0m
+[96msrc/services/content/storage.ts[0m:[93m4[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"./validation"' has no exported member 'validateFile'.
+
+[7m4[0m import { validateFile } from './validation';
+[7m [0m [91m         ~~~~~~~~~~~~[0m
+[96msrc/services/content/storage.ts[0m:[93m18[0m:[93m26[0m - [91merror[0m[90m TS7005: [0mVariable 'storage' implicitly has an 'any' type.
+
+[7m18[0m     const imageRef = ref(storage, `content/${filename}`);
+[7m  [0m [91m                         ~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/services/content/types.ts
+ERROR: [96msrc/services/content/types.ts[0m:[93m1[0m:[93m10[0m - [91merror[0m[90m TS6133: [0m'Content' is declared but its value is never read.
+
+[7m1[0m import { Content, ContentType } from '../../types/content';
+[7m [0m [91m         ~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/hooks/useContent.ts
+ERROR: [96msrc/features/content/hooks/useContent.ts[0m:[93m12[0m:[93m38[0m - [91merror[0m[90m TS2339: [0mProperty 'getContent' does not exist on type 'BaseContentService'.
+
+[7m12[0m         const result = await service.getContent(contentId);
+[7m  [0m [91m                                     ~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/services/content/event.service.ts
+ERROR: [96msrc/services/content/event.service.ts[0m:[93m30[0m:[93m9[0m - [91merror[0m[90m TS2561: [0mObject literal may only specify known properties, but 'coverImage' does not exist in type 'Omit<EventContent, "id" | "createdAt" | "views" | "engagement">'. Did you mean to write 'coverImageUrl'?
+
+[7m30[0m         coverImage: coverImageUrl,
+[7m  [0m [91m        ~~~~~~~~~~[0m
+[96msrc/services/content/event.service.ts[0m:[93m55[0m:[93m17[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type '{ type?: "event" | undefined; eventType?: string | undefined; eventLocation?: string | undefined; eventDate?: string | undefined; endDate?: string | undefined; venue?: string | undefined; ... 21 more ...; data?: Record<...> | undefined; }'. Did you mean 'coverImageUrl'?
+
+[7m55[0m         updates.coverImage = imageUrl;
+[7m  [0m [91m                ~~~~~~~~~~[0m
+[96msrc/services/content/event.service.ts[0m:[93m76[0m:[93m56[0m - [91merror[0m[90m TS2339: [0mProperty 'eventType' does not exist on type 'Content'.
+
+[7m76[0m       if (!event.title || !event.description || !event.eventType ||
+[7m  [0m [91m                                                       ~~~~~~~~~[0m
+[96msrc/services/content/event.service.ts[0m:[93m77[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'eventLocation' does not exist on type 'Content'.
+
+[7m77[0m           !event.eventLocation || !event.eventDate || !event.venue) {
+[7m  [0m [91m                 ~~~~~~~~~~~~~[0m
+[96msrc/services/content/event.service.ts[0m:[93m77[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'eventDate' does not exist on type 'Content'.
+
+[7m77[0m           !event.eventLocation || !event.eventDate || !event.venue) {
+[7m  [0m [91m                                         ~~~~~~~~~[0m
+[96msrc/services/content/event.service.ts[0m:[93m77[0m:[93m62[0m - [91merror[0m[90m TS2339: [0mProperty 'venue' does not exist on type 'Content'.
+
+[7m77[0m           !event.eventLocation || !event.eventDate || !event.venue) {
+[7m  [0m [91m                                                             ~~~~~[0m
+[96msrc/services/content/event.service.ts[0m:[93m82[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'eventDate' does not exist on type 'Content'.
+
+[7m82[0m       const eventDate = new Date(event.eventDate);
+[7m  [0m [91m                                       ~~~~~~~~~[0m
+[96msrc/services/content/event.service.ts[0m:[93m88[0m:[93m17[0m - [91merror[0m[90m TS2339: [0mProperty 'endDate' does not exist on type 'Content'.
+
+[7m88[0m       if (event.endDate) {
+[7m  [0m [91m                ~~~~~~~[0m
+[96msrc/services/content/event.service.ts[0m:[93m89[0m:[93m40[0m - [91merror[0m[90m TS2339: [0mProperty 'endDate' does not exist on type 'Content'.
+
+[7m89[0m         const endDate = new Date(event.endDate);
+[7m  [0m [91m                                       ~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/hooks/useAutoSave.ts
+ERROR: [96msrc/features/content/hooks/useAutoSave.ts[0m:[93m32[0m:[93m59[0m - [91merror[0m[90m TS2304: [0mCannot find name 'ContentType'.
+
+[7m32[0m     const errors = validateContentFields(formData.type as ContentType, {
+[7m  [0m [91m                                                          ~~~~~~~~~~~[0m
+[96msrc/features/content/hooks/useAutoSave.ts[0m:[93m54[0m:[93m40[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ type: string; userId: string; status: "draft"; createdAt: string; updatedAt: string; views: number; engagement: number; id?: string | undefined; title?: string | undefined; description?: string | undefined; ... 7 more ...; data?: Record<string, any> | undefined; }' is not assignable to parameter of type 'Omit<Content, "id">'.
+  Types of property 'title' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+
+[7m 54[0m         await contentRepository.create({
+[7m   [0m [91m                                       ~[0m
+[7m 55[0m           ...formData,
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m...[0m 
+[7m 62[0m           engagement: 0
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m 63[0m         });
+[7m   [0m [91m~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/hooks/useContentForm.ts
+ERROR: [96msrc/features/content/hooks/useContentForm.ts[0m:[93m13[0m:[93m6[0m - [91merror[0m[90m TS6196: [0m'ContentServices' is declared but never used.
+
+[7m13[0m type ContentServices = {
+[7m  [0m [91m     ~~~~~~~~~~~~~~~[0m
+[96msrc/features/content/hooks/useContentForm.ts[0m:[93m78[0m:[93m21[0m - [91merror[0m[90m TS2339: [0mProperty 'create' does not exist on type 'JobService | PromotionService | EventService'.
+  Property 'create' does not exist on type 'JobService'.
+
+[7m78[0m       await service.create(contentData);
+[7m  [0m [91m                    ~~~~~~[0m
+[96msrc/features/content/hooks/useContentForm.ts[0m:[93m106[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'create' does not exist on type 'JobService | PromotionService | EventService'.
+  Property 'create' does not exist on type 'JobService'.
+
+[7m106[0m         await service.create(user.id, { ...formData, status: 'published' as const });
+[7m   [0m [91m                      ~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/hooks/useContentFormManager.ts
+ERROR: [96msrc/features/content/hooks/useContentFormManager.ts[0m:[93m5[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'validateContentFields' is declared but its value is never read.
+
+[7m5[0m import { validateContentFields } from '../../../services/content/validation';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/hooks/useContentValidation.ts
+ERROR: [96msrc/features/content/hooks/useContentValidation.ts[0m:[93m54[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'promotionType' does not exist on type 'Partial<Content>'.
+
+[7m54[0m         if (!data.promotionType) {
+[7m  [0m [91m                  ~~~~~~~~~~~~~[0m
+[96msrc/features/content/hooks/useContentValidation.ts[0m:[93m57[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'location' does not exist on type 'Partial<Content>'.
+
+[7m57[0m         if (!data.location) {
+[7m  [0m [91m                  ~~~~~~~~[0m
+[96msrc/features/content/hooks/useContentValidation.ts[0m:[93m86[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'jobType' does not exist on type 'Partial<Content>'.
+
+[7m86[0m         if (!data.jobType) {
+[7m  [0m [91m                  ~~~~~~~[0m
+[96msrc/features/content/hooks/useContentValidation.ts[0m:[93m89[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'jobLocation' does not exist on type 'Partial<Content>'.
+
+[7m89[0m         if (!data.jobLocation) {
+[7m  [0m [91m                  ~~~~~~~~~~~[0m
+[96msrc/features/content/hooks/useContentValidation.ts[0m:[93m92[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'applicationDeadline' does not exist on type 'Partial<Content>'.
+
+[7m92[0m         if (!data.applicationDeadline) {
+[7m  [0m [91m                  ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/features/content/hooks/useContentValidation.ts[0m:[93m95[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'applicationDeadline' does not exist on type 'Partial<Content>'.
+
+[7m95[0m           const deadline = new Date(data.applicationDeadline);
+[7m  [0m [91m                                         ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/features/content/hooks/useContentValidation.ts[0m:[93m117[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'eventType' does not exist on type 'Partial<Content>'.
+
+[7m117[0m         if (!data.eventType) {
+[7m   [0m [91m                  ~~~~~~~~~[0m
+[96msrc/features/content/hooks/useContentValidation.ts[0m:[93m120[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'eventLocation' does not exist on type 'Partial<Content>'.
+
+[7m120[0m         if (!data.eventLocation) {
+[7m   [0m [91m                  ~~~~~~~~~~~~~[0m
+[96msrc/features/content/hooks/useContentValidation.ts[0m:[93m123[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'eventDate' does not exist on type 'Partial<Content>'.
+
+[7m123[0m         if (!data.eventDate) {
+[7m   [0m [91m                  ~~~~~~~~~[0m
+[96msrc/features/content/hooks/useContentValidation.ts[0m:[93m126[0m:[93m43[0m - [91merror[0m[90m TS2339: [0mProperty 'eventDate' does not exist on type 'Partial<Content>'.
+
+[7m126[0m           const eventDate = new Date(data.eventDate);
+[7m   [0m [91m                                          ~~~~~~~~~[0m
+[96msrc/features/content/hooks/useContentValidation.ts[0m:[93m131[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'venue' does not exist on type 'Partial<Content>'.
+
+[7m131[0m         if (!data.venue) {
+[7m   [0m [91m                  ~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/hooks/useContentFilters.ts
+ERROR: [96msrc/features/content/hooks/useContentFilters.ts[0m:[93m25[0m:[93m16[0m - [91merror[0m[90m TS2345: [0mArgument of type '(prev: ContentFilter) => { dateRange: { start?: string | undefined; end?: string | undefined; }; type?: ContentType | undefined; status?: string | undefined; }' is not assignable to parameter of type 'SetStateAction<ContentFilter>'.
+  Type '(prev: ContentFilter) => { dateRange: { start?: string | undefined; end?: string | undefined; }; type?: ContentType | undefined; status?: string | undefined; }' is not assignable to type '(prevState: ContentFilter) => ContentFilter'.
+    Call signature return types '{ dateRange: { start?: string | undefined; end?: string | undefined; }; type?: ContentType | undefined; status?: string | undefined; }' and 'ContentFilter' are incompatible.
+      The types of 'dateRange.start' are incompatible between these types.
+        Type 'string | undefined' is not assignable to type 'string'.
+          Type 'undefined' is not assignable to type 'string'.
+
+[7m25[0m     setFilters(prev => {
+[7m  [0m [91m               ~~~~~~~~~[0m
+[96msrc/features/content/hooks/useContentFilters.ts[0m:[93m38[0m:[93m16[0m - [91merror[0m[90m TS2790: [0mThe operand of a 'delete' operator must be optional.
+
+[7m38[0m         delete updated.dateRange;
+[7m  [0m [91m               ~~~~~~~~~~~~~~~~~[0m
+[96msrc/features/content/hooks/useContentFilters.ts[0m:[93m52[0m:[93m5[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m52[0m   };
+[7m  [0m [91m    [0m
+
+  [96msrc/features/content/hooks/useContentFilters.ts[0m:[93m5[0m:[93m37[0m
+    [7m5[0m export function useContentFilters() {
+    [7m [0m [96m                                    ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/services/contentAnalytics.ts
+ERROR: [96msrc/features/content/services/contentAnalytics.ts[0m:[93m2[0m:[93m10[0m - [91merror[0m[90m TS7034: [0mVariable 'db' implicitly has type 'any' in some locations where its type cannot be determined.
+
+[7m2[0m import { db } from '../../../config/firebase';
+[7m [0m [91m         ~~[0m
+[96msrc/features/content/services/contentAnalytics.ts[0m:[93m5[0m:[93m27[0m - [91merror[0m[90m TS7005: [0mVariable 'db' implicitly has an 'any' type.
+
+[7m5[0m   await addDoc(collection(db, 'analytics'), {
+[7m [0m [91m                          ~~[0m
+[96msrc/features/content/services/contentAnalytics.ts[0m:[93m15[0m:[93m27[0m - [91merror[0m[90m TS7005: [0mVariable 'db' implicitly has an 'any' type.
+
+[7m15[0m   await addDoc(collection(db, 'analytics'), {
+[7m  [0m [91m                          ~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/services/contentValidation.ts
+ERROR: [96msrc/features/content/services/contentValidation.ts[0m:[93m14[0m:[93m31[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Partial<Content>' is not assignable to parameter of type 'Partial<PromotionContent>'.
+  Types of property 'type' are incompatible.
+    Type 'string | undefined' is not assignable to type '"promotion" | undefined'.
+      Type 'string' is not assignable to type '"promotion"'.
+
+[7m14[0m       validatePromotionFields(data, errors);
+[7m  [0m [91m                              ~~~~[0m
+[96msrc/features/content/services/contentValidation.ts[0m:[93m17[0m:[93m25[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Partial<Content>' is not assignable to parameter of type 'Partial<JobContent>'.
+  Types of property 'type' are incompatible.
+    Type 'string | undefined' is not assignable to type '"job" | undefined'.
+      Type 'string' is not assignable to type '"job"'.
+
+[7m17[0m       validateJobFields(data, errors);
+[7m  [0m [91m                        ~~~~[0m
+[96msrc/features/content/services/contentValidation.ts[0m:[93m20[0m:[93m27[0m - [91merror[0m[90m TS2345: [0mArgument of type 'Partial<Content>' is not assignable to parameter of type 'Partial<EventContent>'.
+  Types of property 'type' are incompatible.
+    Type 'string | undefined' is not assignable to type '"event" | undefined'.
+      Type 'string' is not assignable to type '"event"'.
+
+[7m20[0m       validateEventFields(data, errors);
+[7m  [0m [91m                          ~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/services/contentService.ts
+ERROR: [96msrc/features/content/services/contentService.ts[0m:[93m2[0m:[93m10[0m - [91merror[0m[90m TS7034: [0mVariable 'db' implicitly has type 'any' in some locations where its type cannot be determined.
+
+[7m2[0m import { db } from '../../../config/firebase';
+[7m [0m [91m         ~~[0m
+[96msrc/features/content/services/contentService.ts[0m:[93m6[0m:[93m33[0m - [91merror[0m[90m TS7005: [0mVariable 'db' implicitly has an 'any' type.
+
+[7m6[0m   const contentRef = collection(db, 'content');
+[7m [0m [91m                                ~~[0m
+[96msrc/features/content/services/contentService.ts[0m:[93m11[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'promotionType' does not exist on type 'Partial<Content>'.
+  Property 'promotionType' does not exist on type 'Partial<EventContent>'.
+
+[7m11[0m     promotionType: data.promotionType,
+[7m  [0m [91m                        ~~~~~~~~~~~~~[0m
+[96msrc/features/content/services/contentService.ts[0m:[93m12[0m:[93m20[0m - [91merror[0m[90m TS2339: [0mProperty 'location' does not exist on type 'Partial<Content>'.
+  Property 'location' does not exist on type 'Partial<EventContent>'.
+
+[7m12[0m     location: data.location,
+[7m  [0m [91m                   ~~~~~~~~[0m
+[96msrc/features/content/services/contentService.ts[0m:[93m25[0m:[93m22[0m - [91merror[0m[90m TS7005: [0mVariable 'db' implicitly has an 'any' type.
+
+[7m25[0m   const docRef = doc(db, 'content', id);
+[7m  [0m [91m                     ~~[0m
+[96msrc/features/content/services/contentService.ts[0m:[93m31[0m:[93m33[0m - [91merror[0m[90m TS7005: [0mVariable 'db' implicitly has an 'any' type.
+
+[7m31[0m   const contentRef = collection(db, 'content');
+[7m  [0m [91m                                ~~[0m
+[96msrc/features/content/services/contentService.ts[0m:[93m46[0m:[93m22[0m - [91merror[0m[90m TS7005: [0mVariable 'db' implicitly has an 'any' type.
+
+[7m46[0m   const docRef = doc(db, 'content', id);
+[7m  [0m [91m                     ~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/utils/contentFormatters.ts
+ERROR: [96msrc/features/content/utils/contentFormatters.ts[0m:[93m16[0m:[93m63[0m - [91merror[0m[90m TS2339: [0mProperty 'jobType' does not exist on type 'Partial<Content>'.
+
+[7m16[0m       return `${jobTypeOptions.find(opt => opt.value === data.jobType)?.label || ''} ·
+[7m  [0m [91m                                                              ~~~~~~~[0m
+[96msrc/features/content/utils/contentFormatters.ts[0m:[93m17[0m:[93m67[0m - [91merror[0m[90m TS2339: [0mProperty 'jobLocation' does not exist on type 'Partial<Content>'.
+
+[7m17[0m               ${jobLocationOptions.find(opt => opt.value === data.jobLocation)?.label || ''}`;
+[7m  [0m [91m                                                                  ~~~~~~~~~~~[0m
+[96msrc/features/content/utils/contentFormatters.ts[0m:[93m19[0m:[93m65[0m - [91merror[0m[90m TS2339: [0mProperty 'eventType' does not exist on type 'Partial<Content>'.
+
+[7m19[0m       return `${eventTypeOptions.find(opt => opt.value === data.eventType)?.label || ''} ·
+[7m  [0m [91m                                                                ~~~~~~~~~[0m
+[96msrc/features/content/utils/contentFormatters.ts[0m:[93m20[0m:[93m69[0m - [91merror[0m[90m TS2339: [0mProperty 'eventLocation' does not exist on type 'Partial<Content>'.
+
+[7m20[0m               ${eventLocationOptions.find(opt => opt.value === data.eventLocation)?.label || ''}`;
+[7m  [0m [91m                                                                    ~~~~~~~~~~~~~[0m
+[96msrc/features/content/utils/contentFormatters.ts[0m:[93m22[0m:[93m69[0m - [91merror[0m[90m TS2339: [0mProperty 'promotionType' does not exist on type 'Partial<Content>'.
+
+[7m22[0m       return `${promotionTypeOptions.find(opt => opt.value === data.promotionType)?.label || ''} ·
+[7m  [0m [91m                                                                    ~~~~~~~~~~~~~[0m
+[96msrc/features/content/utils/contentFormatters.ts[0m:[93m23[0m:[93m64[0m - [91merror[0m[90m TS2339: [0mProperty 'location' does not exist on type 'Partial<Content>'.
+
+[7m23[0m               ${locationOptions.find(opt => opt.value === data.location)?.label || ''}`;
+[7m  [0m [91m                                                               ~~~~~~~~[0m
+[96msrc/features/content/utils/contentFormatters.ts[0m:[93m34[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'applicationDeadline' does not exist on type 'Partial<Content>'.
+
+[7m34[0m       return data.applicationDeadline ?
+[7m  [0m [91m                  ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/features/content/utils/contentFormatters.ts[0m:[93m35[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'applicationDeadline' does not exist on type 'Partial<Content>'.
+
+[7m35[0m         `Scade il ${formatDate(data.applicationDeadline)}` : '';
+[7m  [0m [91m                                    ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/features/content/utils/contentFormatters.ts[0m:[93m37[0m:[93m19[0m - [91merror[0m[90m TS2339: [0mProperty 'eventDate' does not exist on type 'Partial<Content>'.
+
+[7m37[0m       return data.eventDate ?
+[7m  [0m [91m                  ~~~~~~~~~[0m
+[96msrc/features/content/utils/contentFormatters.ts[0m:[93m38[0m:[93m32[0m - [91merror[0m[90m TS2339: [0mProperty 'eventDate' does not exist on type 'Partial<Content>'.
+
+[7m38[0m         `${formatDateTime(data.eventDate)}` : '';
+[7m  [0m [91m                               ~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/NewContentHeader.tsx
+ERROR: [96msrc/features/content/components/NewContent/NewContentHeader.tsx[0m:[93m4[0m:[93m10[0m - [91merror[0m[90m TS6133: [0m'Content' is declared but its value is never read.
+
+[7m4[0m import { Content, ContentType } from '../../../../types/content';
+[7m [0m [91m         ~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/ContentStep1.tsx
+ERROR: [96msrc/features/content/components/NewContent/ContentStep1.tsx[0m:[93m40[0m:[93m7[0m - [91merror[0m[90m TS2322: [0mType 'ContentType' is not assignable to type 'ContentType | undefined'.
+  Type '"job"' is not assignable to type 'ContentType | undefined'.
+
+[7m40[0m       type: stepData.type as ContentType
+[7m  [0m [91m      ~~~~[0m
+
+  [96msrc/features/content/types/newContentTypes.ts[0m:[93m5[0m:[93m3[0m
+    [7m5[0m   type: ContentType;
+    [7m [0m [96m  ~~~~[0m
+    The expected type comes from property 'type' which is declared here on type 'Partial<NewContentFormData>'
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/ContentStep2.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/ContentStep2.tsx[0m:[93m5[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"../../../types"' has no exported member 'PromotionContent'.
+
+[7m5[0m import { PromotionContent } from '../../../types';
+[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/ContentStep1.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/ContentStep1.tsx[0m:[93m48[0m:[93m12[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ title: string; type: string; promotionType: "discount" | "offer" | "event"; location: string; usageLimit: string; validityPeriod: { start: string; end: string; }; }' is not assignable to parameter of type 'Partial<PromotionContent>'.
+  Types of property 'type' are incompatible.
+    Type 'string' is not assignable to type '"promotion"'.
+
+[7m48[0m     onNext(stepData);
+[7m  [0m [91m           ~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/ContentStep3.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/ContentStep3.tsx[0m:[93m77[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'targetAudience' does not exist on type 'Partial<Content>'.
+  Property 'targetAudience' does not exist on type 'Partial<EventContent>'.
+
+[7m77[0m           subtitle={data.targetAudience?.map(audience =>
+[7m  [0m [91m                         ~~~~~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/ContentStep3.tsx[0m:[93m77[0m:[93m46[0m - [91merror[0m[90m TS7006: [0mParameter 'audience' implicitly has an 'any' type.
+
+[7m77[0m           subtitle={data.targetAudience?.map(audience =>
+[7m  [0m [91m                                             ~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/ContentStep5.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/ContentStep5.tsx[0m:[93m3[0m:[93m10[0m - [91merror[0m[90m TS6133: [0m'getFirestore' is declared but its value is never read.
+
+[7m3[0m import { getFirestore, initializeFirestore, persistentLocalCache, persistentMultipleTabManager } from 'firebase/firestore';
+[7m [0m [91m         ~~~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/ContentStep5.tsx[0m:[93m7[0m:[93m11[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+[7m7[0m   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+[7m [0m [91m          ~~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/ContentStep5.tsx[0m:[93m8[0m:[93m15[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+[7m8[0m   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+[7m [0m [91m              ~~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/ContentStep5.tsx[0m:[93m9[0m:[93m14[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+[7m9[0m   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+[7m [0m [91m             ~~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/ContentStep5.tsx[0m:[93m10[0m:[93m18[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+[7m10[0m   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+[7m  [0m [91m                 ~~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/ContentStep5.tsx[0m:[93m11[0m:[93m22[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+[7m11[0m   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+[7m  [0m [91m                     ~~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/ContentStep5.tsx[0m:[93m12[0m:[93m10[0m - [91merror[0m[90m TS1343: [0mThe 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+
+[7m12[0m   appId: import.meta.env.VITE_FIREBASE_APP_ID
+[7m  [0m [91m         ~~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/ContentStep4.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/ContentStep4.tsx[0m:[93m42[0m:[93m14[0m - [91merror[0m[90m TS2322: [0mType 'string | null' is not assignable to type 'string | undefined'.
+  Type 'null' is not assignable to type 'string | undefined'.
+
+[7m42[0m     onNext({ coverImage: selectedImage });
+[7m  [0m [91m             ~~~~~~~~~~[0m
+
+  [96msrc/features/content/types/contentTypes.ts[0m:[93m16[0m:[93m3[0m
+    [7m16[0m   coverImage?: string;
+    [7m  [0m [96m  ~~~~~~~~~~[0m
+    The expected type comes from property 'coverImage' which is declared here on type 'Partial<Content>'
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/NewContentForm.tsx
+ERROR: [96msrc/features/content/components/NewContent/NewContentForm.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/NewContentForm.tsx[0m:[93m4[0m:[93m25[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../types/content' or its corresponding type declarations.
+
+[7m4[0m import { Content } from '../../../types/content';
+[7m [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/NewContentForm.tsx[0m:[93m45[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Partial<Content>' is not assignable to type 'Partial<JobContent>'.
+  Types of property 'type' are incompatible.
+    Type 'string | undefined' is not assignable to type '"job" | undefined'.
+      Type 'string' is not assignable to type '"job"'.
+
+[7m45[0m             formData={formData}
+[7m  [0m [91m            ~~~~~~~~[0m
+
+  [96msrc/features/content/components/NewContent/steps/JobSteps.tsx[0m:[93m11[0m:[93m3[0m
+    [7m11[0m   formData: Partial<JobContent>;
+    [7m  [0m [96m  ~~~~~~~~[0m
+    The expected type comes from property 'formData' which is declared here on type 'IntrinsicAttributes & JobStepsProps'
+[96msrc/features/content/components/NewContent/NewContentForm.tsx[0m:[93m58[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Partial<Content>' is not assignable to type 'Partial<PromotionContent>'.
+  Types of property 'type' are incompatible.
+    Type 'string | undefined' is not assignable to type '"promotion" | undefined'.
+      Type 'string' is not assignable to type '"promotion"'.
+
+[7m58[0m             formData={formData}
+[7m  [0m [91m            ~~~~~~~~[0m
+
+  [96msrc/features/content/components/NewContent/steps/PromotionSteps.tsx[0m:[93m11[0m:[93m3[0m
+    [7m11[0m   formData: Partial<PromotionContent>;
+    [7m  [0m [96m  ~~~~~~~~[0m
+    The expected type comes from property 'formData' which is declared here on type 'IntrinsicAttributes & PromotionStepsProps'
+[96msrc/features/content/components/NewContent/NewContentForm.tsx[0m:[93m71[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Partial<Content>' is not assignable to type 'Partial<EventContent>'.
+  Types of property 'type' are incompatible.
+    Type 'string | undefined' is not assignable to type '"event" | undefined'.
+      Type 'string' is not assignable to type '"event"'.
+
+[7m71[0m             formData={formData}
+[7m  [0m [91m            ~~~~~~~~[0m
+
+  [96msrc/features/content/components/NewContent/steps/EventSteps.tsx[0m:[93m11[0m:[93m3[0m
+    [7m11[0m   formData: Partial<EventContent>;
+    [7m  [0m [96m  ~~~~~~~~[0m
+    The expected type comes from property 'formData' which is declared here on type 'IntrinsicAttributes & EventStepsProps'
+[96msrc/features/content/components/NewContent/NewContentForm.tsx[0m:[93m93[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; onCancel: () => void; type: Content; step: number; isSubmitting: boolean; }' is not assignable to type 'IntrinsicAttributes & NewContentHeaderProps'.
+  Property 'title' does not exist on type 'IntrinsicAttributes & NewContentHeaderProps'.
+
+[7m93[0m         title={formData.title || 'Nuovo contenuto'}
+[7m  [0m [91m        ~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/EventSteps.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/EventSteps.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/EventStep4.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/EventStep4.tsx[0m:[93m47[0m:[93m74[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<EventContent>'. Did you mean 'coverImageUrl'?
+
+[7m47[0m   const [selectedImage, setSelectedImage] = useState<string | null>(data.coverImage || null);
+[7m  [0m [91m                                                                         ~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/EventStep4.tsx[0m:[93m59[0m:[93m14[0m - [91merror[0m[90m TS2561: [0mObject literal may only specify known properties, but 'coverImage' does not exist in type 'Partial<EventContent>'. Did you mean to write 'coverImageUrl'?
+
+[7m59[0m     onNext({ coverImage: selectedImage });
+[7m  [0m [91m             ~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/EventStep2.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/EventStep2.tsx[0m:[93m123[0m:[93m23[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<EventContent>'. Did you mean 'coverImageUrl'?
+
+[7m123[0m           image={data.coverImage}
+[7m   [0m [91m                      ~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/EventStep1.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/EventStep1.tsx[0m:[93m190[0m:[93m27[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<EventContent>'. Did you mean 'coverImageUrl'?
+
+[7m190[0m           image={formData.coverImage}
+[7m   [0m [91m                          ~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/EventStep3.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/EventStep3.tsx[0m:[93m206[0m:[93m23[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<EventContent>'. Did you mean 'coverImageUrl'?
+
+[7m206[0m           image={data.coverImage}
+[7m   [0m [91m                      ~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/JobStep2.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/JobStep2.tsx[0m:[93m109[0m:[93m23[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<JobContent>'. Did you mean 'coverImageUrl'?
+
+[7m109[0m           image={data.coverImage}
+[7m   [0m [91m                      ~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/JobStep4.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/JobStep4.tsx[0m:[93m47[0m:[93m74[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<JobContent>'. Did you mean 'coverImageUrl'?
+
+[7m47[0m   const [selectedImage, setSelectedImage] = useState<string | null>(data.coverImage || null);
+[7m  [0m [91m                                                                         ~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/JobStep4.tsx[0m:[93m59[0m:[93m14[0m - [91merror[0m[90m TS2561: [0mObject literal may only specify known properties, but 'coverImage' does not exist in type 'Partial<JobContent>'. Did you mean to write 'coverImageUrl'?
+
+[7m59[0m     onNext({ coverImage: selectedImage });
+[7m  [0m [91m             ~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/JobStep3.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/JobStep3.tsx[0m:[93m186[0m:[93m23[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<JobContent>'. Did you mean 'coverImageUrl'?
+
+[7m186[0m           image={data.coverImage}
+[7m   [0m [91m                      ~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/JobSteps.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/JobSteps.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/JobStep1.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/JobStep1.tsx[0m:[93m126[0m:[93m14[0m - [91merror[0m[90m TS2741: [0mProperty 'label' is missing in type '{ type: "number"; name: string; placeholder: string; value: string | number; onChange: (e: ChangeEvent<HTMLInputElement>) => void; }' but required in type 'InputProps'.
+
+[7m126[0m             <Input
+[7m   [0m [91m             ~~~~~[0m
+
+  [96msrc/components/ui/Input.tsx[0m:[93m4[0m:[93m3[0m
+    [7m4[0m   label: string;
+    [7m [0m [96m  ~~~~~[0m
+    'label' is declared here.
+[96msrc/features/content/components/NewContent/steps/JobStep1.tsx[0m:[93m136[0m:[93m14[0m - [91merror[0m[90m TS2741: [0mProperty 'label' is missing in type '{ type: "number"; name: string; placeholder: string; value: string | number; onChange: (e: ChangeEvent<HTMLInputElement>) => void; }' but required in type 'InputProps'.
+
+[7m136[0m             <Input
+[7m   [0m [91m             ~~~~~[0m
+
+  [96msrc/components/ui/Input.tsx[0m:[93m4[0m:[93m3[0m
+    [7m4[0m   label: string;
+    [7m [0m [96m  ~~~~~[0m
+    'label' is declared here.
+[96msrc/features/content/components/NewContent/steps/JobStep1.tsx[0m:[93m146[0m:[93m14[0m - [91merror[0m[90m TS2741: [0mProperty 'label' is missing in type '{ name: string; value: "hour" | "month" | "year"; onChange: (e: ChangeEvent<HTMLSelectElement>) => void; options: { value: string; label: string; }[]; }' but required in type 'SelectProps'.
+
+[7m146[0m             <Select
+[7m   [0m [91m             ~~~~~~[0m
+
+  [96msrc/components/ui/Select.tsx[0m:[93m9[0m:[93m3[0m
+    [7m9[0m   label: string;
+    [7m [0m [96m  ~~~~~[0m
+    'label' is declared here.
+[96msrc/features/content/components/NewContent/steps/JobStep1.tsx[0m:[93m196[0m:[93m27[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<JobContent>'. Did you mean 'coverImageUrl'?
+
+[7m196[0m           image={formData.coverImage}
+[7m   [0m [91m                          ~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/PromotionStep1.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/PromotionStep1.tsx[0m:[93m169[0m:[93m27[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<PromotionContent>'. Did you mean 'coverImageUrl'?
+
+[7m169[0m           image={formData.coverImage}
+[7m   [0m [91m                          ~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/PromotionStep2.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/PromotionStep2.tsx[0m:[93m20[0m:[93m22[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<PromotionContent>'. Did you mean 'coverImageUrl'?
+
+[7m20[0m     coverImage: data.coverImage || '',
+[7m  [0m [91m                     ~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/PromotionStep3.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/PromotionStep3.tsx[0m:[93m21[0m:[93m3[0m - [91merror[0m[90m TS6133: [0m'onPublish' is declared but its value is never read.
+
+[7m21[0m   onPublish,
+[7m  [0m [91m  ~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/PromotionSteps.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/PromotionSteps.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/PromotionSteps.tsx[0m:[93m55[0m:[93m10[0m - [91merror[0m[90m TS2739: [0mType '{ data: Partial<PromotionContent>; onNext: (data: Partial<PromotionContent>) => void; onBack: () => void; onSaveDraft: () => void; }' is missing the following properties from type 'PromotionStep3Props': onPublish, isSubmitting
+
+[7m55[0m         <PromotionStep3
+[7m  [0m [91m         ~~~~~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/PromotionStep4.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/PromotionStep4.tsx[0m:[93m38[0m:[93m74[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<PromotionContent>'. Did you mean 'coverImageUrl'?
+
+[7m38[0m   const [selectedImage, setSelectedImage] = useState<string | null>(data.coverImage || null);
+[7m  [0m [91m                                                                         ~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/PromotionStep4.tsx[0m:[93m45[0m:[93m7[0m - [91merror[0m[90m TS2561: [0mObject literal may only specify known properties, but 'coverImage' does not exist in type 'Partial<PromotionContent>'. Did you mean to write 'coverImageUrl'?
+
+[7m45[0m       coverImage: selectedImage || undefined
+[7m  [0m [91m      ~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/JobStep5.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/JobStep5.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/JobStep5.tsx[0m:[93m72[0m:[93m19[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<JobContent>'. Did you mean 'coverImageUrl'?
+
+[7m72[0m             {data.coverImage && (
+[7m  [0m [91m                  ~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/JobStep5.tsx[0m:[93m74[0m:[93m27[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<JobContent>'. Did you mean 'coverImageUrl'?
+
+[7m74[0m                 src={data.coverImage}
+[7m  [0m [91m                          ~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/JobStep5.tsx[0m:[93m177[0m:[93m23[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<JobContent>'. Did you mean 'coverImageUrl'?
+
+[7m177[0m           image={data.coverImage}
+[7m   [0m [91m                      ~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/PromotionStep5.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/PromotionStep5.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/PromotionStep5.tsx[0m:[93m55[0m:[93m19[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<PromotionContent>'. Did you mean 'coverImageUrl'?
+
+[7m55[0m             {data.coverImage && (
+[7m  [0m [91m                  ~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/PromotionStep5.tsx[0m:[93m57[0m:[93m27[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<PromotionContent>'. Did you mean 'coverImageUrl'?
+
+[7m57[0m                 src={data.coverImage}
+[7m  [0m [91m                          ~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/PromotionStep5.tsx[0m:[93m98[0m:[93m41[0m - [91merror[0m[90m TS2322: [0mType '{ children: string; variant: "secondary"; size: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
+  Property 'size' does not exist on type 'IntrinsicAttributes & ButtonProps'.
+
+[7m98[0m             <Button variant="secondary" size="sm">
+[7m  [0m [91m                                        ~~~~[0m
+[96msrc/features/content/components/NewContent/steps/PromotionStep5.tsx[0m:[93m129[0m:[93m23[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<PromotionContent>'. Did you mean 'coverImageUrl'?
+
+[7m129[0m           image={data.coverImage}
+[7m   [0m [91m                      ~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/NewContentType.tsx
+ERROR: [96msrc/features/content/components/NewContent/NewContentType.tsx[0m:[93m3[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"../../types"' has no exported member 'ContentType'.
+
+[7m3[0m import { ContentType } from '../../types';
+[7m [0m [91m         ~~~~~~~~~~~[0m
+STACK: 
+Failed to collect coverage from /home/project/src/features/content/components/NewContent/steps/EventStep5.tsx
+ERROR: [96msrc/features/content/components/NewContent/steps/EventStep5.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/EventStep5.tsx[0m:[93m74[0m:[93m19[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<EventContent>'. Did you mean 'coverImageUrl'?
+
+[7m74[0m             {data.coverImage && (
+[7m  [0m [91m                  ~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/EventStep5.tsx[0m:[93m76[0m:[93m27[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<EventContent>'. Did you mean 'coverImageUrl'?
+
+[7m76[0m                 src={data.coverImage}
+[7m  [0m [91m                          ~~~~~~~~~~[0m
+[96msrc/features/content/components/NewContent/steps/EventStep5.tsx[0m:[93m182[0m:[93m23[0m - [91merror[0m[90m TS2551: [0mProperty 'coverImage' does not exist on type 'Partial<EventContent>'. Did you mean 'coverImageUrl'?
+
+[7m182[0m           image={data.coverImage}
+[7m   [0m [91m                      ~~~~~~~~~~[0m
+STACK: 
+----------------------------------------------|---------|----------|---------|---------|-------------------
+File                                          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------------------------------------|---------|----------|---------|---------|-------------------
+All files                                     |       0 |        0 |       0 |       0 |                   
+ features/content                             |       0 |      100 |     100 |       0 |                   
+  index.ts                                    |       0 |      100 |     100 |       0 | 2-5               
+ features/content/components                  |       0 |      100 |     100 |       0 |                   
+  index.ts                                    |       0 |      100 |     100 |       0 | 1-3               
+ features/content/components/NewContent       |       0 |        0 |       0 |       0 |                   
+  ContentStep2.tsx                            |       0 |        0 |       0 |       0 | 1-89              
+  ContentStep3.tsx                            |       0 |        0 |       0 |       0 | 1-97              
+  index.ts                                    |       0 |      100 |     100 |       0 | 1-4               
+ features/content/components/NewContent/steps |       0 |      100 |     100 |       0 |                   
+  index.ts                                    |       0 |      100 |     100 |       0 | 1-23              
+ features/content/hooks                       |       0 |        0 |       0 |       0 |                   
+  index.ts                                    |       0 |      100 |     100 |       0 | 1-4               
+  useAuth.ts                                  |       0 |        0 |       0 |       0 | 1-10              
+  useContentState.ts                          |       0 |        0 |       0 |       0 | 1-62              
+  useContentStep.ts                           |       0 |        0 |       0 |       0 | 1-23              
+  useEventForm.ts                             |       0 |        0 |       0 |       0 | 1-43              
+ features/content/services                    |       0 |      100 |     100 |       0 |                   
+  index.ts                                    |       0 |      100 |     100 |       0 | 1-3               
+ features/content/types                       |       0 |      100 |     100 |       0 |                   
+  index.ts                                    |       0 |      100 |     100 |       0 | 7                 
+ features/content/utils                       |       0 |        0 |       0 |       0 |                   
+  validation.ts                               |       0 |        0 |       0 |       0 | 8-104             
+ services/content                             |       0 |        0 |       0 |       0 |                   
+  index.ts                                    |       0 |      100 |       0 |       0 | 1-6               
+  queries.ts                                  |       0 |        0 |       0 |       0 | 1-32              
+----------------------------------------------|---------|----------|---------|---------|-------------------
+Jest: "global" coverage threshold for statements (70%) not met: 0%
+Jest: "global" coverage threshold for branches (70%) not met: 0%
+Jest: "global" coverage threshold for lines (70%) not met: 0%
+Jest: "global" coverage threshold for functions (70%) not met: 0%
+Summary of all failing tests
+FAIL src/services/__tests__/content/queries.test.ts
+  ● Content Queries › should handle date range filters
+
+    Expected value   undefined
+    Received:
+      undefined
+
+    Message:
+      expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: "createdAt", ">=", "2024-01-01"
+    Received: "userId", "==", "test-user-123"
+
+    Number of calls: 1
+
+    Difference:
+
+    Compared values have no visual difference.Error:
+
+      83 |     const constraints = buildContentQuery(mockUserId, filters);
+      84 |
+    > 85 |     expect(where).toHaveBeenCalledWith('createdAt', '>=', '2024-01-01');
+         |                   ^
+      86 |     expect(where).toHaveBeenCalledWith('createdAt', '<=', '2024-12-31');
+      87 |     expect(constraints).toHaveLength(5);
+      88 |   });
+
+      at Object.eval (src/services/__tests__/content/queries.test.ts:85:19)
+      at https:/zp1v56uxy8rdx5ypatb0ockcb9tr6a-oci3.w-credentialless-staticblitz.com/blitz.c8c182a3.js:40:21812
+      at new Promise (https:/zp1v56uxy8rdx5ypatb0ockcb9tr6a-oci3.w-credentialless-staticblitz.com/blitz.c8c182a3.js:40:21783)
+
+FAIL src/features/content/components/NewContent/steps/__tests__/JobStep4.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep4.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep4.test.tsx[0m:[93m110[0m:[93m11[0m - [91merror[0m[90m TS2561: [0mObject literal may only specify known properties, but 'coverImage' does not exist in type 'Partial<JobContent>'. Did you mean to write 'coverImageUrl'?
+
+    [7m110[0m           coverImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40'
+    [7m   [0m [91m          ~~~~~~~~~~[0m
+
+      [96msrc/features/content/components/NewContent/steps/JobStep4.tsx[0m:[93m31[0m:[93m3[0m
+        [7m31[0m   data: Partial<JobContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & JobStep4Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep4.test.tsx[0m:[93m125[0m:[93m11[0m - [91merror[0m[90m TS2561: [0mObject literal may only specify known properties, but 'coverImage' does not exist in type 'Partial<JobContent>'. Did you mean to write 'coverImageUrl'?
+
+    [7m125[0m           coverImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40'
+    [7m   [0m [91m          ~~~~~~~~~~[0m
+
+      [96msrc/features/content/components/NewContent/steps/JobStep4.tsx[0m:[93m31[0m:[93m3[0m
+        [7m31[0m   data: Partial<JobContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & JobStep4Props'
+
+FAIL src/features/content/components/NewContent/steps/__tests__/JobSteps.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobSteps.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobSteps.test.tsx[0m:[93m4[0m:[93m30[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../../../utils/contentValidation' or its corresponding type declarations.
+
+    [7m4[0m import { validateStep } from '../../../../../utils/contentValidation';
+    [7m [0m [91m                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobSteps.test.tsx[0m:[93m34[0m:[93m13[0m - [91merror[0m[90m TS2740: [0mType '{ step: number; formData: {}; onStepChange: Mock<any, any, any>; onSubmit: Mock<any, any, any>; }' is missing the following properties from type 'JobStepsProps': onNext, onBack, onCancel, onSaveDraft, and 3 more.
+
+    [7m34[0m     render(<JobSteps {...props} />);
+    [7m  [0m [91m            ~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobSteps.test.tsx[0m:[93m44[0m:[93m35[0m - [91merror[0m[90m TS2740: [0mType '{ step: number; formData: {}; onStepChange: Mock<any, any, any>; onSubmit: Mock<any, any, any>; }' is missing the following properties from type 'JobStepsProps': onNext, onBack, onCancel, onSaveDraft, and 3 more.
+
+    [7m44[0m     const { container } = render(<JobSteps {...props} />);
+    [7m  [0m [91m                                  ~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobSteps.test.tsx[0m:[93m60[0m:[93m13[0m - [91merror[0m[90m TS2740: [0mType '{ step: number; formData: {}; onStepChange: Mock<any, any, any>; onSubmit: Mock<any, any, any>; }' is missing the following properties from type 'JobStepsProps': onNext, onBack, onCancel, onSaveDraft, and 3 more.
+
+    [7m60[0m     render(<JobSteps {...props} />);
+    [7m  [0m [91m            ~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobSteps.test.tsx[0m:[93m71[0m:[93m13[0m - [91merror[0m[90m TS2740: [0mType '{ step: number; formData: { title: string; }; onStepChange: Mock<any, any, any>; onSubmit: Mock<any, any, any>; }' is missing the following properties from type 'JobStepsProps': onNext, onBack, onCancel, onSaveDraft, and 3 more.
+
+    [7m71[0m     render(<JobSteps {...props} />);
+    [7m  [0m [91m            ~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/steps/__tests__/EventStep5.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep5.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep5.test.tsx[0m:[93m3[0m:[93m25[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../types/content' or its corresponding type declarations.
+
+    [7m3[0m import { Content } from '../../../types/content';
+    [7m [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/steps/__tests__/PromotionStep1.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/PromotionStep1.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/PromotionStep1.test.tsx[0m:[93m21[0m:[93m9[0m - [91merror[0m[90m TS6133: [0m'mockOnSaveDraft' is declared but its value is never read.
+
+    [7m21[0m   const mockOnSaveDraft = jest.fn();
+    [7m  [0m [91m        ~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/PromotionStep1.test.tsx[0m:[93m31[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; promotionType: string; location: string; validityPeriod: { start: string; end: string; }; }' is not assignable to type 'Partial<PromotionContent>'.
+      Types of property 'promotionType' are incompatible.
+        Type 'string' is not assignable to type '"discount" | "offer" | "event" | undefined'.
+
+    [7m31[0m         data={mockData}
+    [7m  [0m [91m        ~~~~[0m
+
+      [96msrc/features/content/components/NewContent/steps/PromotionStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<PromotionContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & PromotionStep1Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/PromotionStep1.test.tsx[0m:[93m47[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; promotionType: string; location: string; validityPeriod: { start: string; end: string; }; }' is not assignable to type 'Partial<PromotionContent>'.
+      Types of property 'promotionType' are incompatible.
+        Type 'string' is not assignable to type '"discount" | "offer" | "event" | undefined'.
+
+    [7m47[0m         data={mockData}
+    [7m  [0m [91m        ~~~~[0m
+
+      [96msrc/features/content/components/NewContent/steps/PromotionStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<PromotionContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & PromotionStep1Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/PromotionStep1.test.tsx[0m:[93m69[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; promotionType: string; location: string; validityPeriod: { start: string; end: string; }; }' is not assignable to type 'Partial<PromotionContent>'.
+      Types of property 'promotionType' are incompatible.
+        Type 'string' is not assignable to type '"discount" | "offer" | "event" | undefined'.
+
+    [7m69[0m         data={mockData}
+    [7m  [0m [91m        ~~~~[0m
+
+      [96msrc/features/content/components/NewContent/steps/PromotionStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<PromotionContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & PromotionStep1Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/PromotionStep1.test.tsx[0m:[93m106[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; promotionType: string; location: string; validityPeriod: { start: string; end: string; }; }' is not assignable to type 'Partial<PromotionContent>'.
+      Types of property 'promotionType' are incompatible.
+        Type 'string' is not assignable to type '"discount" | "offer" | "event" | undefined'.
+
+    [7m106[0m         data={mockData}
+    [7m   [0m [91m        ~~~~[0m
+
+      [96msrc/features/content/components/NewContent/steps/PromotionStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<PromotionContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & PromotionStep1Props'
+
+FAIL src/features/content/components/NewContent/steps/__tests__/JobStep3.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep3.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep3.test.tsx[0m:[93m3[0m:[93m25[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../types/content' or its corresponding type declarations.
+
+    [7m3[0m import { Content } from '../../../types/content';
+    [7m [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/steps/__tests__/EventStep3.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep3.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep3.test.tsx[0m:[93m4[0m:[93m30[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../../../utils/contentValidation' or its corresponding type declarations.
+
+    [7m4[0m import { validateStep } from '../../../../../utils/contentValidation';
+    [7m [0m [91m                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/steps/__tests__/ContentStep5.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/ContentStep5.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/ContentStep5.test.tsx[0m:[93m3[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"../ContentStep5"' has no exported member 'ContentStep5'.
+
+    [7m3[0m import { ContentStep5 } from '../ContentStep5';
+    [7m [0m [91m         ~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/ContentStep5.test.tsx[0m:[93m4[0m:[93m33[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../../../utils/contentValidation' or its corresponding type declarations.
+
+    [7m4[0m import { validateContent } from '../../../../../utils/contentValidation';
+    [7m [0m [91m                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/ContentStep5.test.tsx[0m:[93m9[0m:[93m9[0m - [91merror[0m[90m TS6133: [0m'mockData' is declared but its value is never read.
+
+    [7m9[0m   const mockData = {
+    [7m [0m [91m        ~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/ContentStep5.test.tsx[0m:[93m28[0m:[93m22[0m - [91merror[0m[90m TS2339: [0mProperty 'onPublish' does not exist on type '{}'.
+
+    [7m28[0m     expect(mockProps.onPublish).toHaveBeenCalled();
+    [7m  [0m [91m                     ~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/ContentStep5.test.tsx[0m:[93m41[0m:[93m22[0m - [91merror[0m[90m TS2339: [0mProperty 'onPublish' does not exist on type '{}'.
+
+    [7m41[0m     expect(mockProps.onPublish).not.toHaveBeenCalled();
+    [7m  [0m [91m                     ~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/steps/__tests__/EventStep1.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep1.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx[0m:[93m24[0m:[93m9[0m - [91merror[0m[90m TS6133: [0m'mockOnSaveDraft' is declared but its value is never read.
+
+    [7m24[0m   const mockOnSaveDraft = jest.fn();
+    [7m  [0m [91m        ~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx[0m:[93m34[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; jobType: string; jobLocation: string; department: string; salary: { min: undefined; max: undefined; period: string; }; applicationDeadline: string; }' is not assignable to type 'Partial<JobContent>'.
+      Types of property 'salary' are incompatible.
+        Property 'currency' is missing in type '{ min: undefined; max: undefined; period: string; }' but required in type '{ min?: number | undefined; max?: number | undefined; currency: string; period: "year" | "hour" | "month"; }'.
+
+    [7m34[0m         data={mockData}
+    [7m  [0m [91m        ~~~~[0m
+
+      [96msrc/types/content.ts[0m:[93m41[0m:[93m5[0m
+        [7m41[0m     currency: string;
+        [7m  [0m [96m    ~~~~~~~~[0m
+        'currency' is declared here.
+      [96msrc/features/content/components/NewContent/steps/JobStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<JobContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & JobStep1Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx[0m:[93m50[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; jobType: string; jobLocation: string; department: string; salary: { min: undefined; max: undefined; period: string; }; applicationDeadline: string; }' is not assignable to type 'Partial<JobContent>'.
+      Types of property 'salary' are incompatible.
+        Property 'currency' is missing in type '{ min: undefined; max: undefined; period: string; }' but required in type '{ min?: number | undefined; max?: number | undefined; currency: string; period: "year" | "hour" | "month"; }'.
+
+    [7m50[0m         data={mockData}
+    [7m  [0m [91m        ~~~~[0m
+
+      [96msrc/types/content.ts[0m:[93m41[0m:[93m5[0m
+        [7m41[0m     currency: string;
+        [7m  [0m [96m    ~~~~~~~~[0m
+        'currency' is declared here.
+      [96msrc/features/content/components/NewContent/steps/JobStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<JobContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & JobStep1Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx[0m:[93m71[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; jobType: string; jobLocation: string; department: string; salary: { min: undefined; max: undefined; period: string; }; applicationDeadline: string; }' is not assignable to type 'Partial<JobContent>'.
+      Types of property 'salary' are incompatible.
+        Property 'currency' is missing in type '{ min: undefined; max: undefined; period: string; }' but required in type '{ min?: number | undefined; max?: number | undefined; currency: string; period: "year" | "hour" | "month"; }'.
+
+    [7m71[0m         data={mockData}
+    [7m  [0m [91m        ~~~~[0m
+
+      [96msrc/types/content.ts[0m:[93m41[0m:[93m5[0m
+        [7m41[0m     currency: string;
+        [7m  [0m [96m    ~~~~~~~~[0m
+        'currency' is declared here.
+      [96msrc/features/content/components/NewContent/steps/JobStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<JobContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & JobStep1Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx[0m:[93m107[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; jobType: string; jobLocation: string; department: string; salary: { min: undefined; max: undefined; period: string; }; applicationDeadline: string; }' is not assignable to type 'Partial<JobContent>'.
+      Types of property 'salary' are incompatible.
+        Property 'currency' is missing in type '{ min: undefined; max: undefined; period: string; }' but required in type '{ min?: number | undefined; max?: number | undefined; currency: string; period: "year" | "hour" | "month"; }'.
+
+    [7m107[0m         data={mockData}
+    [7m   [0m [91m        ~~~~[0m
+
+      [96msrc/types/content.ts[0m:[93m41[0m:[93m5[0m
+        [7m41[0m     currency: string;
+        [7m  [0m [96m    ~~~~~~~~[0m
+        'currency' is declared here.
+      [96msrc/features/content/components/NewContent/steps/JobStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<JobContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & JobStep1Props'
+    [96msrc/features/content/components/NewContent/steps/__tests__/JobStep1.test.tsx[0m:[93m146[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType '{ title: string; jobType: string; jobLocation: string; department: string; salary: { min: undefined; max: undefined; period: string; }; applicationDeadline: string; }' is not assignable to type 'Partial<JobContent>'.
+      Types of property 'salary' are incompatible.
+        Property 'currency' is missing in type '{ min: undefined; max: undefined; period: string; }' but required in type '{ min?: number | undefined; max?: number | undefined; currency: string; period: "year" | "hour" | "month"; }'.
+
+    [7m146[0m         data={mockData}
+    [7m   [0m [91m        ~~~~[0m
+
+      [96msrc/types/content.ts[0m:[93m41[0m:[93m5[0m
+        [7m41[0m     currency: string;
+        [7m  [0m [96m    ~~~~~~~~[0m
+        'currency' is declared here.
+      [96msrc/features/content/components/NewContent/steps/JobStep1.tsx[0m:[93m11[0m:[93m3[0m
+        [7m11[0m   data: Partial<JobContent>;
+        [7m  [0m [96m  ~~~~[0m
+        The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & JobStep1Props'
+
+FAIL src/features/content/components/NewContent/__tests__/NewContentHeader.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/__tests__/NewContentHeader.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/__tests__/NewContentType.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/__tests__/NewContentType.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/__tests__/NewContentType.test.tsx[0m:[93m4[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"../../../types"' has no exported member 'ContentType'.
+
+    [7m4[0m import { ContentType } from '../../../types';
+    [7m [0m [91m         ~~~~~~~~~~~[0m
+
+FAIL src/features/content/components/NewContent/steps/__tests__/EventStep4.test.tsx
+  ● Test suite failed to run
+
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep4.test.tsx[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'React' is declared but its value is never read.
+
+    [7m1[0m import React from 'react';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/components/NewContent/steps/__tests__/EventStep4.test.tsx[0m:[93m3[0m:[93m25[0m - [91merror[0m[90m TS2307: [0mCannot find module '../../../types/content' or its corresponding type declarations.
+
+    [7m3[0m import { Content } from '../../../types/content';
+    [7m [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+FAIL src/features/content/utils/__tests__/contentFormatters.test.ts
+  ● Test suite failed to run
+
+    [96msrc/features/content/utils/__tests__/contentFormatters.test.ts[0m:[93m2[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'Content' is declared but its value is never read.
+
+    [7m2[0m import { Content } from '../../../../types/content';
+    [7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [96msrc/features/content/utils/__tests__/contentFormatters.test.ts[0m:[93m17[0m:[93m41[0m - [91merror[0m[90m TS2559: [0mType '{ jobType: string; jobLocation: string; }' has no properties in common with type 'Partial<Content>'.
+
+    [7m17[0m       const label = getTypeLabel('job', jobData);
+    [7m  [0m [91m                                        ~~~~~~~[0m
+    [96msrc/features/content/utils/__tests__/contentFormatters.test.ts[0m:[93m28[0m:[93m43[0m - [91merror[0m[90m TS2559: [0mType '{ eventType: string; eventLocation: string; }' has no properties in common with type 'Partial<Content>'.
+
+    [7m28[
