@@ -63,10 +63,107 @@ The `Content` feature supports the management of different types of content: `jo
 
 ### Step Flow
 
-1. **Type Selection**: The user selects the type of content to create before entering the steps.
-2. **Step 1**: Fill in common fields (`title`, `description`, `type`).
-3. **Step 2**: Fill in type-specific fields (e.g., `salary` for jobs).
-4. **Step 3**: Upload or select a `coverImage` and view a definitive preview with an AI success prediction.
+#### Step 1: Basic Content Information
+- **Objective**: Capture fundamental content details
+- **Fields**:
+  - Content Type Selection (`type`)
+  - Title (`title`)
+  - Description (`description`)
+- **Validation**:
+  - Ensure `type` is one of: `job`, `promotion`, or `event`
+  - Validate minimum length for `title` and `description`
+- **Preview**: 
+  - Dynamically update `ContentPreview` with basic information
+  - Show placeholder or initial content type icon
+
+#### Step 2: Type-Specific Details
+- **Objective**: Collect type-specific information based on selected content type
+- **Job-Specific Fields**:
+  - Job Type (`jobType`)
+  - Job Location (`jobLocation`)
+  - Salary (`salary`)
+  - Requirements (`requirements`)
+  - Application Deadline (`applicationDeadline`)
+
+- **Promotion-Specific Fields**:
+  - Promotion Type (`promotionType`)
+  - Location (`location`)
+  - Validity Period (`validityPeriod`)
+  - Target Audience (`targetAudience`)
+
+- **Event-Specific Fields**:
+  - Event Type (`eventType`)
+  - Event Date (`eventDate`)
+  - Venue (`venue`)
+  - Capacity (`capacity`)
+
+- **Validation**:
+  - Type-specific field requirements
+  - Date validations
+  - Numeric constraints (e.g., capacity, salary)
+- **Preview**:
+  - Update `ContentPreview` with detailed information
+  - Show more comprehensive content representation
+
+#### Step 3: Media and Engagement
+- **Objective**: Enhance content with visual and engagement elements
+- **Fields**:
+  - Cover Image (`coverImage`)
+  - Additional Images (optional)
+  - Tags or Keywords
+- **AI Integration**:
+  - Success Prediction Analysis
+  - Engagement Score Estimation
+  - Recommended Improvements
+- **Validation**:
+  - Image URL validation
+  - Image size and format checks
+- **Preview**:
+  - Display cover image
+  - Show AI-generated engagement insights
+  - Provide visual feedback on content potential
+
+#### Step 4: Review and Publish
+- **Objective**: Final review, draft saving, or content publication
+- **Actions**:
+  - Complete Content Review
+  - Save as Draft
+  - Publish Content
+- **Validation**:
+  - Final comprehensive validation across all steps
+  - Check all required fields are filled
+  - Verify content meets publication standards
+- **Options**:
+  - Publish Immediately
+  - Schedule for Future Publication
+  - Save as Draft for Later Editing
+
+#### Step Navigation Logic
+- **Next Button**:
+  - Validates current step's fields
+  - Prevents progression if validation fails
+  - Provides specific error messages
+
+- **Back Button**:
+  - Allows returning to previous steps
+  - Preserves entered information
+  - Supports non-linear editing process
+
+- **Draft Management**:
+  - Can save progress at any step
+  - Automatically saves minimal required information
+  - Allows resuming content creation later
+
+#### Error Handling and Feedback
+- Inline field-level validation
+- Step-level validation messages
+- Global error handling for service interactions
+- Toast notifications for successful actions
+
+#### Performance Considerations
+- Lazy loading of type-specific fields
+- Optimistic UI updates
+- Minimal API calls during content creation
 
 ### Common Logic
 
