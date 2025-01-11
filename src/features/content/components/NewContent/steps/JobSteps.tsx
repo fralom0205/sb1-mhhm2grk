@@ -1,4 +1,3 @@
-import React from 'react';
 import { JobStep1 } from './JobStep1';
 import { JobStep2 } from './JobStep2';
 import { JobStep3 } from './JobStep3';

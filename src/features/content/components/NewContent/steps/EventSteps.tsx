@@ -1,4 +1,3 @@
-import React from 'react';
 import { EventStep1 } from './EventStep1';
 import { EventStep2 } from './EventStep2';
 import { EventStep3 } from './EventStep3';

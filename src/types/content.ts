@@ -25,7 +25,6 @@ export interface Content {
   views?: number;
   engagement?: number;
   coverImageUrl?: string;
-  sharingImage?: string;
   step?: number; // Add step for workflow tracking
   publishDate?: string; // Add publishDate for published content
   data?: Record<string, any>; // Optional, for additional dynamic fields

@@ -1,4 +1,3 @@
-import React from 'react';
 import { PromotionStep1 } from './PromotionStep1';
 import { PromotionStep2 } from './PromotionStep2';
 import { PromotionStep3 } from './PromotionStep3';
@@ -56,8 +55,9 @@ export function PromotionSteps({
           data={formData}
           onNext={onNext}
           onBack={onBack}
-          onSaveDraft={onSaveDraft}
-        />
+          onSaveDraft={onSaveDraft} onPublish={function (): void {
+            throw new Error('Function not implemented.');
+          } } isSubmitting={false}        />
       );
     case 4:
       return (
